@@ -10,15 +10,18 @@
   /* ---------------- i18n ---------------- */
   const T = {
     en: {
+      "hero.org": "Organised by", "ws.hint": "scroll ↓ to travel · click a card to play", "ws.play": "Open playground",
+      "ask.eyebrow": "Contact", "ask.title": "Got a <em>question?</em>", "ask.text": "Write to us about workshops, registration or anything else — we're happy to help.",
+      "ask.mail": "Email", "ask.phone": "Phone", "ft.org": "Organised by", "ft.prev": "Previous summits", "pg.label": "Playground",
       "nav.about": "About", "nav.workshops": "Workshops", "nav.program": "Program", "nav.join": "Join", "nav.contact": "Contact",
       "hero.edition": "13th", "hero.tag": "FabLab students. To anyone who wants to learn",
       "hero.hint": "move · click to collapse the wave", "hero.date": "Date",
       "hero.cta1": "Explore workshops", "hero.cta2": "Join the summit",
       "about.eyebrow": "Coding since 2013", "about.title": "A decade+ of<br><em>leaps</em>",
-      "about.p1": "Hisar Coding Summit was created to grow our students' potential through digital transformation. This year it is held for the 13th time at Hisar Schools — in English and Turkish, taught by FabLab students to anyone who wants to learn.",
+      "about.p1": "Hisar Coding Summit was created to grow our students' potential through digital transformation. On 18–19 December 2026 the 13th annual summit, Quantum Leap, comes to Hisar Schools — organised by FRC Team 6431, in English and Turkish, taught by FabLab students to anyone who wants to learn.",
       "about.p2": "Idealab, Hisar's FabLab, has been the heartbeat of innovation for over a decade: a maker space where creativity and collaboration turn ideas into real things.",
       "about.s1": "Editions", "about.s2": "Workshops", "about.s3": "Languages", "about.s4": "Since",
-      "ws.eyebrow": "Student-led workshops", "ws.title": "Pick your<br><em>state</em>", "ws.search": "Search workshops…",
+      "ws.eyebrow": "Student-led workshops", "ws.title": "Pick your <em>state</em>", "ws.search": "Search workshops…",
       "ws.all": "All", "ws.count": n => `${n} WORKSHOP${n === 1 ? "" : "S"}`,
       "ws.none": "No workshop matches", "ws.noneHint": "Try another filter or search word.",
       "ws.soon": "Workshops are being finalized", "ws.soonHint": "The lesson list for this year lands here soon.",
@@ -38,15 +41,18 @@
       "mq2": ["FABLAB STUDENTS", "TO ANYONE WHO WANTS TO LEARN", "IDEALAB", "SINCE 2013"]
     },
     tr: {
+      "hero.org": "Düzenleyen", "ws.hint": "ilerlemek için aşağı kaydır · oynamak için karta tıkla", "ws.play": "Playground'u aç",
+      "ask.eyebrow": "İletişim", "ask.title": "Sorun mu <em>var?</em>", "ask.text": "Atölyeler, kayıt ya da aklına takılan her şey için bize yaz — yardımcı olmaktan mutluluk duyarız.",
+      "ask.mail": "E-posta", "ask.phone": "Telefon", "ft.org": "Düzenleyen", "ft.prev": "Önceki summitler", "pg.label": "Playground",
       "nav.about": "Hakkında", "nav.workshops": "Atölyeler", "nav.program": "Program", "nav.join": "Katıl", "nav.contact": "İletişim",
       "hero.edition": "13.", "hero.tag": "FabLab öğrencilerinden öğrenmek isteyen herkese",
       "hero.hint": "fareyi gezdir · dalgayı çökertmek için tıkla", "hero.date": "Tarih",
       "hero.cta1": "Atölyeleri keşfet", "hero.cta2": "Summit'e katıl",
       "about.eyebrow": "2013'ten beri kodluyoruz", "about.title": "On yılı aşkın<br><em>sıçrama</em>",
-      "about.p1": "Hisar Coding Summit, öğrencilerimizin potansiyelini dijital dönüşüm kapsamında geliştirmek için kuruldu. Bu yıl 13. kez Hisar Okulları'nda; İngilizce ve Türkçe, FabLab öğrencilerinden öğrenmek isteyen herkese.",
+      "about.p1": "Hisar Coding Summit, öğrencilerimizin potansiyelini dijital dönüşüm kapsamında geliştirmek için kuruldu. 13. Geleneksel Coding Summit: Quantum Leap, 18–19 Aralık 2026'da Hisar Okulları'nda — FRC Takımı 6431 düzenliyor; İngilizce ve Türkçe, FabLab öğrencilerinden öğrenmek isteyen herkese.",
       "about.p2": "Hisar'ın FabLab'ı Idealab, on yılı aşkın süredir inovasyonun kalbi: yaratıcılığın ve iş birliğinin fikirleri gerçeğe dönüştürdüğü bir üretim alanı.",
       "about.s1": "Edisyon", "about.s2": "Atölye", "about.s3": "Dil", "about.s4": "Başlangıç",
-      "ws.eyebrow": "Öğrenci atölyeleri", "ws.title": "Durumunu<br><em>seç</em>", "ws.search": "Atölye ara…",
+      "ws.eyebrow": "Öğrenci atölyeleri", "ws.title": "Durumunu <em>seç</em>", "ws.search": "Atölye ara…",
       "ws.all": "Tümü", "ws.count": n => `${n} ATÖLYE`,
       "ws.none": "Eşleşen atölye yok", "ws.noneHint": "Başka bir filtre ya da kelime dene.",
       "ws.soon": "Atölyeler kesinleşiyor", "ws.soonHint": "Bu yılın ders listesi çok yakında burada.",
@@ -78,7 +84,7 @@
     $$("[data-i18n-ph]").forEach(el => { el.placeholder = t(el.dataset.i18nPh); });
     $$(".lang button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
     $("#dateText").textContent = pick(S.dateLabel) || "TBA";
-    buildMarquee(); renderChips(); renderGrid(); renderProgram(); renderJoin(); tickCountdown();
+    buildMarquee(); renderChips(); renderGrid(); renderProgram(); renderJoin(); renderLinks(); tickCountdown();
   }
   $$(".lang button").forEach(b => b.addEventListener("click", () => {
     lang = b.dataset.lang;
@@ -281,97 +287,152 @@
     });
   }
 
-  /* ---------------- workshops ---------------- */
+  /* ---------------- workshops: horizontal travel (pinned on wide screens) ---------------- */
   const WS = (S.workshops || []).filter(w => w && w.title);
-  const FACETS = ["category", "level", "language", "day", "session", "age"];
-  const facet = FACETS.find(f => new Set(WS.map(w => pick(w[f])).filter(Boolean)).size > 1);
+  const CATS = S.categories || {};
   let active = "", query = "";
-  const shapes = [
-    `<svg class="card__shape" viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#c52a43"/></svg>`,
-    `<svg class="card__shape" viewBox="0 0 40 40"><rect x="3" y="3" width="34" height="34" fill="#efc232"/></svg>`,
-    `<svg class="card__shape" viewBox="0 0 40 40"><circle cx="20" cy="20" r="17" fill="none" stroke="#f4f1c1" stroke-width="2"/><circle cx="20" cy="20" r="10" fill="none" stroke="#f4f1c1" stroke-width="2"/></svg>`,
-    `<svg class="card__shape" viewBox="0 0 40 40"><rect x="3" y="3" width="34" height="34" fill="#2e3a4f"/><circle cx="37" cy="3" r="14" fill="#c52a43"/></svg>`
-  ];
   const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const catName = k => pick(CATS[k]) || k;
   $("#wsCountStat").dataset.count = WS.length;
 
+  // poster-style compositions for the card art, picked by index
+  function art(i, col) {
+    const v = i % 6, R = "#c52a43", Y = "#efc232", Cr = "#f4f1c1", N = "#2e3a4f";
+    const ring = `<g fill="none" stroke="${Cr}" stroke-width="1.2" opacity=".85">${Array.from({ length: 9 }, (_, k) => `<ellipse cx="110" cy="128" rx="${54 - k * 3}" ry="${54 - k * 4.4}" transform="rotate(${k * 9 + i * 13} 110 128)"/>`).join("")}</g>`;
+    const shapes = [
+      `<rect x="56" y="74" width="108" height="108" fill="${R}"/><circle cx="164" cy="74" r="54" fill="${col}"/>${ring}`,
+      `<circle cx="100" cy="120" r="70" fill="${col}"/><rect x="118" y="40" width="70" height="70" fill="${N}"/>${ring}`,
+      `<rect x="40" y="60" width="140" height="140" fill="${N}"/><circle cx="110" cy="130" r="60" fill="${R}"/>${ring}`,
+      `<circle cx="80" cy="90" r="48" fill="${Y}"/><circle cx="140" cy="150" r="58" fill="${R}" opacity=".95"/>${ring}`,
+      `<path d="M30 190 L110 40 L190 190Z" fill="${col}"/><circle cx="110" cy="140" r="36" fill="${R}"/>${ring}`,
+      `<rect x="30" y="100" width="160" height="70" fill="${R}"/><rect x="75" y="40" width="70" height="160" fill="${col}" opacity=".9"/>${ring}`
+    ];
+    return `<svg viewBox="0 0 220 220" class="hcard__art" aria-hidden="true">${shapes[v]}</svg>`;
+  }
+
   function renderChips() {
-    const box = $("#chips");
-    if (!facet) { box.innerHTML = ""; return; }
-    const counts = {};
-    WS.forEach(w => { const v = pick(w[facet]); if (v) counts[v] = (counts[v] || 0) + 1; });
-    const vals = Object.keys(counts).sort((a, b) => counts[b] - counts[a]);
+    const box = $("#chips"), counts = {};
+    WS.forEach(w => { counts[w.cat] = (counts[w.cat] || 0) + 1; });
+    const keys = Object.keys(CATS).filter(k => counts[k]);
     box.innerHTML = [`<button class="chip" type="button" data-v="" aria-pressed="${!active}">${t("ws.all")}<span class="n">${WS.length}</span></button>`]
-      .concat(vals.map(v => `<button class="chip" type="button" data-v="${esc(v)}" aria-pressed="${active === v}">${esc(v)}<span class="n">${counts[v]}</span></button>`)).join("");
+      .concat(keys.map(k => `<button class="chip" type="button" data-v="${k}" aria-pressed="${active === k}"><i class="chip__dot" style="background:${CATS[k].color}"></i>${esc(catName(k))}<span class="n">${counts[k]}</span></button>`)).join("");
   }
   $("#chips").addEventListener("click", e => {
     const b = e.target.closest(".chip"); if (!b) return;
-    active = b.dataset.v; renderChips(); filter();
+    active = b.dataset.v; renderChips(); renderGrid(); jumpToWorkshops();
   });
-  $("#q").addEventListener("input", e => { query = e.target.value.trim().toLocaleLowerCase(lang); filter(); });
+  $("#q").addEventListener("input", e => { query = e.target.value.trim().toLocaleLowerCase(lang); renderGrid(); });
 
+  let shown = [];
   function renderGrid() {
-    const grid = $("#grid");
-    if (!WS.length) {
-      grid.innerHTML = `<div class="empty"><b>${t("ws.soon")}</b>${t("ws.soonHint")}</div>`;
-      $("#wsCount").textContent = ""; return;
+    const track = $("#track");
+    shown = WS.map((w, i) => ({ w, i })).filter(({ w }) => {
+      const hay = [w.title, w.desc].map(pick).concat(catName(w.cat)).join(" ").toLocaleLowerCase(lang);
+      return (!active || w.cat === active) && (!query || hay.includes(query));
+    });
+    if (!shown.length) {
+      track.innerHTML = `<div class="hcard hcard--empty"><b>${t("ws.none")}</b><span>${t("ws.noneHint")}</span></div>`;
+    } else {
+      track.innerHTML = shown.map(({ w, i }, n) => {
+        const col = (CATS[w.cat] || {}).color || "#f4f1c1";
+        return `<button class="hcard" type="button" data-i="${i}" style="--cat:${col}">
+          <span class="hcard__top"><span class="hcard__no">${String(i + 1).padStart(2, "0")}</span><span class="hcard__cat"><i style="background:${col}"></i>${esc(catName(w.cat))}</span></span>
+          <span class="hcard__visual">${art(i, col)}</span>
+          <h3>${esc(pick(w.title))}</h3>
+          <p>${esc(pick(w.desc))}</p>
+          <span class="hcard__cta">${t("ws.play")} <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </button>`;
+      }).join("");
     }
-    grid.innerHTML = WS.map((w, i) => {
-      const tags = FACETS.map((f, j) => pick(w[f]) ? `<span class="tag${j === 0 ? " tag--red" : j === 1 ? " tag--y" : ""}">${esc(pick(w[f]))}</span>` : "").join("");
-      return `<button class="card" type="button" data-i="${i}">
-        ${shapes[i % shapes.length]}
-        <span class="card__no">Q.${String(i + 1).padStart(2, "0")}</span>
-        <h3>${esc(pick(w.title))}</h3>
-        ${pick(w.desc) ? `<p>${esc(pick(w.desc))}</p>` : ""}
-        <span class="card__tags">${tags}</span>
-      </button>`;
-    }).join("") + `<div class="empty" id="noMatch" hidden><b>${t("ws.none")}</b>${t("ws.noneHint")}</div>`;
-    filter();
-  }
-  function filter() {
-    if (!WS.length) return;
-    let n = 0;
-    $$(".card", $("#grid")).forEach(c => {
-      const w = WS[+c.dataset.i];
-      const hay = [w.title, w.desc, ...FACETS.map(f => w[f])].map(pick).join(" ").toLocaleLowerCase(lang);
-      const ok = (!active || pick(w[facet]) === active) && (!query || hay.includes(query));
-      c.classList.toggle("is-hidden", !ok); if (ok) n++;
-    });
-    $("#noMatch").hidden = n > 0;
-    $("#wsCount").textContent = t("ws.count", n);
+    layoutHS();
   }
 
-  const grid = $("#grid");
-  if (fine && !reduced) {
-    grid.addEventListener("pointermove", e => {
-      const c = e.target.closest(".card"); if (!c) return;
-      const b = c.getBoundingClientRect(), x = (e.clientX - b.left) / b.width, y = (e.clientY - b.top) / b.height;
-      c.style.setProperty("--ry", `${(x - .5) * 10}deg`); c.style.setProperty("--rx", `${(.5 - y) * 10}deg`);
-      c.style.setProperty("--mx", `${x * 100}%`); c.style.setProperty("--my", `${y * 100}%`);
-    });
-    grid.addEventListener("pointerout", e => {
-      const c = e.target.closest(".card"); if (c && !c.contains(e.relatedTarget)) { c.style.setProperty("--rx", "0deg"); c.style.setProperty("--ry", "0deg"); }
-    });
+  /* pinned horizontal scroll, Lusion "featured work" style */
+  const hs = $("#workshops"), view = $("#hsView"), track = $("#track");
+  const wide = matchMedia("(min-width: 760px)");
+  let travel = 0, cur = 0, goal = 0, vel = 0;
+  function layoutHS() {
+    if (!wide.matches || reduced) { hs.style.height = ""; track.style.transform = ""; travel = 0; updateHUD(); return; }
+    travel = Math.max(0, track.scrollWidth - view.clientWidth);
+    hs.style.height = `${innerHeight + travel}px`;
+    onHSScroll();
+  }
+  function onHSScroll() {
+    if (!travel) return;
+    const top = hs.getBoundingClientRect().top;
+    goal = Math.min(travel, Math.max(0, -top));
+  }
+  function updateHUD() {
+    const n = shown.length || 1;
+    const p = travel ? cur / travel : (view.scrollLeft / Math.max(1, view.scrollWidth - view.clientWidth) || 0);
+    $("#hsBar").style.transform = `scaleX(${Math.max(.02, p)})`;
+    $("#hsNum").textContent = `${String(Math.min(n, Math.round(p * (n - 1)) + 1)).padStart(2, "0")} / ${String(shown.length).padStart(2, "0")}`;
+  }
+  (function hsLoop() {
+    if (travel) {
+      const prev = cur; cur += (goal - cur) * .12; vel += ((cur - prev) - vel) * .2;
+      const skew = Math.max(-6, Math.min(6, vel * .25));
+      track.style.transform = `translate3d(${-cur}px,0,0) skewX(${-skew}deg)`;
+      // parallax inside each card
+      track.querySelectorAll(".hcard__art").forEach(svg => {
+        const b = svg.getBoundingClientRect(), mid = (b.left + b.width / 2) / innerWidth - .5;
+        svg.style.transform = `translateX(${mid * -40}px) rotate(${mid * 12}deg)`;
+      });
+      updateHUD();
+    }
+    requestAnimationFrame(hsLoop);
+  })();
+  addEventListener("scroll", onHSScroll, { passive: true });
+  addEventListener("resize", layoutHS);
+  wide.addEventListener("change", layoutHS);
+  view.addEventListener("scroll", updateHUD, { passive: true });
+  function jumpToWorkshops() {
+    if (travel) scrollTo({ top: hs.offsetTop, behavior: reduced ? "auto" : "smooth" });
+    else view.scrollTo({ left: 0 });
   }
 
-  /* modal */
+  /* workshop window + playground */
   const modal = $("#modal");
-  let lastFocus = null;
-  grid.addEventListener("click", e => {
-    const c = e.target.closest(".card"); if (!c) return;
+  let lastFocus = null, killPg = null;
+  track.addEventListener("click", e => {
+    const c = e.target.closest(".hcard[data-i]"); if (!c) return;
     const i = +c.dataset.i, w = WS[i];
     lastFocus = c;
-    $("#mNo").textContent = `Q.${String(i + 1).padStart(2, "0")}`;
+    $("#mNo").textContent = `${String(i + 1).padStart(2, "0")} · ${catName(w.cat)}`;
     $("#mTitle").textContent = pick(w.title);
     $("#mDesc").textContent = pick(w.desc);
-    $("#mMeta").innerHTML = FACETS.concat("duration").filter(f => pick(w[f]))
-      .map(f => `<div><dt>${t("meta." + f)}</dt><dd>${esc(pick(w[f]))}</dd></div>`).join("");
+    const body = $("#mPg"); body.innerHTML = "";
+    const make = (window.PLAYGROUNDS || {})[w.pg];
     modal.classList.add("is-open"); modal.setAttribute("aria-hidden", "false");
+    document.documentElement.classList.add("no-scroll");
+    killPg = make ? make(body, (en, tr) => lang === "tr" ? tr : en) : null;
     $(".modal__close", modal).focus();
   });
-  const closeModal = () => { modal.classList.remove("is-open"); modal.setAttribute("aria-hidden", "true"); lastFocus && lastFocus.focus(); };
+  const closeModal = () => {
+    modal.classList.remove("is-open"); modal.setAttribute("aria-hidden", "true");
+    document.documentElement.classList.remove("no-scroll");
+    if (killPg) { killPg(); killPg = null; }
+    setTimeout(() => { if (!modal.classList.contains("is-open")) $("#mPg").innerHTML = ""; }, 400);
+    lastFocus && lastFocus.focus({ preventScroll: true });
+  };
   modal.addEventListener("click", e => { if (e.target.closest("[data-close]")) closeModal(); });
   addEventListener("keydown", e => { if (e.key === "Escape" && modal.classList.contains("is-open")) closeModal(); });
+
+  /* links: organiser, contact, previous editions */
+  function renderLinks() {
+    const Lk = S.links || {};
+    ["#orgLink", "#frcStrip", "#frcFoot"].forEach(q => { const a = $(q); if (a) a.href = Lk.frc || "#"; });
+    const rows = [
+      Lk.email && [`mailto:${Lk.email}`, "✉", t("ask.mail"), Lk.email],
+      Lk.instagram && [Lk.instagram, "◎", "Instagram", "@hisarcs"],
+      Lk.linkedin && [Lk.linkedin, "in", "LinkedIn", "HisarCS · idealab"],
+      ["tel:+902123640000", "☏", t("ask.phone"), "+90 (212) 364 00 00"]
+    ].filter(Boolean);
+    $("#askLinks").innerHTML = rows.map(([href, ic, lab, val]) =>
+      `<a class="ask__link" href="${esc(href)}"${href.startsWith("http") ? ' target="_blank" rel="noopener"' : ""}><span class="ask__ic">${ic}</span><span><small>${esc(lab)}</small><b>${esc(val)}</b></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>`).join("");
+    $("#prevLinks").innerHTML = (Lk.previous || []).map(p =>
+      `<li><a href="${esc(p.href)}"${p.href.startsWith("http") ? ' target="_blank" rel="noopener"' : ""}>${esc(pick(p.label))} ↗</a></li>`).join("");
+  }
 
   /* ---------------- program ---------------- */
   let day = 0;

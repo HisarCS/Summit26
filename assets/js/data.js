@@ -1,18 +1,172 @@
 /* Content for the 13th Coding Summit site.
-   Workshops come from the summit's lesson sheet (names of instructors are left out on purpose).
-   Every workshop field except `title` is optional; the page builds filters from whatever is filled in. */
+   Workshop names come from the list shared in the 13th Coding Summit WhatsApp community (16 Oct 2026).
+   Instructor names are left out on purpose.
+   Descriptions: `official` ones come from the summit's own texts; the rest are drafts to be replaced as the
+   official texts and photos arrive. `pg` picks the interactive playground shown in the workshop window. */
 
 window.SUMMIT = {
-  // From the Canva poster ("DEC 19, 2027"). Check with the team before publishing.
-  date: "2027-12-19T09:00:00+03:00",
-  dateLabel: { en: "DEC 19, 2027", tr: "19 ARALIK 2027" },
-
-  // Set when registration opens; until then the Join button points to Instagram.
+  date: "2026-12-18T09:00:00+03:00",
+  dateLabel: { en: "18–19 DEC 2026", tr: "18–19 ARALIK 2026" },
   registrationUrl: "",
 
-  // { title, desc, category, level, language, age, day, session, duration }
-  workshops: [],
+  links: {
+    email: "idealab@hisarschool.k12.tr",
+    instagram: "https://www.instagram.com/hisarcs/",
+    linkedin: "",
+    frc: "https://www.thebluealliance.com/team/6431",
+    hisarcs: "https://hisarcs.github.io/",
+    previous: [
+      { label: { en: "Coding Summit 11 (2024)", tr: "Coding Summit 11 (2024)" }, href: "legacy/" },
+      { label: { en: "Hisar Coding Summit 2022", tr: "Hisar Coding Summit 2022" }, href: "https://hisarcs.github.io/Web/" },
+      { label: { en: "HisarCS events", tr: "HisarCS etkinlikleri" }, href: "https://hisarcs.github.io/events.html" },
+      { label: { en: "HisarCS", tr: "HisarCS" }, href: "https://hisarcs.github.io/" }
+    ]
+  },
 
-  // [{ id, label: {en,tr}, slots: [{ time, title: {en,tr}, note: {en,tr} }] }]
-  program: []
+  categories: {
+    robotics: { en: "Robotics", tr: "Robotik", color: "#c52a43" },
+    ai: { en: "AI & Data", tr: "Yapay Zekâ & Veri", color: "#efc232" },
+    code: { en: "Code & Games", tr: "Kod & Oyun", color: "#6fa8ff" },
+    fab: { en: "Digital Fabrication", tr: "Dijital Üretim", color: "#f4f1c1" },
+    design: { en: "Design & Art", tr: "Tasarım & Sanat", color: "#ff8a5c" },
+    electronics: { en: "Electronics", tr: "Elektronik", color: "#7be0b0" },
+    innovation: { en: "Innovation", tr: "İnovasyon", color: "#c8a6ff" }
+  },
+
+  workshops: [
+    { cat: "robotics", pg: "gears",
+      title: { tr: "AR Etkileşimli Mekanik Sistemler: Otomata", en: "AR Interactive Mechanical Systems: Automata" },
+      desc: { tr: "Otomatalar, K12 öğrencilerine mekanik sistemleri öğretmek için tasarlanıp üretilmiş 3D kitler. Dişliler ve kam mekanizmaları gibi günlük hayatta sık karşılaşılan sistemleri kurarken, AR ile hazırlanmış etkileşimli animasyonlar sayesinde bu sistemlerin nasıl çalıştığını görüyorsun.",
+              en: "Automata are 3D kits designed and made to teach mechanical systems to K12 students. You build everyday mechanisms like gears and cams, then watch how they work through interactive AR animations." } },
+    { cat: "innovation", pg: "rnd", official: true,
+      title: { tr: "Ar-Ge ve Hızlı Prototipleme: Zihinler ve Makineler", en: "R&D and Rapid Prototyping: Minds and Machines" },
+      desc: { tr: "Bu atölye, STEM, toplum ve teknoloji arasındaki etkileşimi anlayarak disiplinlerarası problemleri çözmeyi hedefler. Katılımcılar, karmaşık sistemleri analiz ederken hesaplamalı düşünme ve tasarım odaklı araştırma becerilerini geliştirir. Oturum boyunca fikir üretme, problem tanımlama, hipotez kurma ve proje yazımı aşamaları uygulanır. Bu süreç, öğrencilerin düşüncelerini sistematik biçimde formüle edip araştırmaya dönüştürmesini sağlar.",
+              en: "This workshop tackles interdisciplinary problems by understanding how STEM, society and technology interact. Participants build computational thinking and design-led research skills while analysing complex systems, and practise idea generation, problem definition, hypothesis building and proposal writing — turning their thinking into structured research." } },
+    { cat: "ai", pg: "ml",
+      title: { tr: "Çocuklar İçin Makine Öğrenimi", en: "Machine Learning for Kids" },
+      desc: { tr: "Etkileşimli etkinliklerle makine öğrenimine giriş: model eğitmeyi, tahmin yapmayı ve yapay zekânın etiğini eğlenceli bir şekilde öğreniyorsun.",
+              en: "A playful introduction to machine learning through hands-on activities: train a model, make predictions and talk about the ethics of AI." } },
+    { cat: "robotics", pg: "robot",
+      title: { tr: "FRC Robotik Sprinti — 4 Saatte Robot", en: "FRC Robotics Sprint — A Robot in 4 Hours" },
+      desc: { tr: "FRC takımının çalışma yöntemiyle dört saatte tasarımdan sürüşe bir robot: mekanik, elektronik ve kod aynı masada.",
+              en: "Build a robot from design to driving in four hours, the way an FRC team works: mechanics, electronics and code at one table." } },
+    { cat: "code", pg: "game",
+      title: { tr: "Godot ile 2D Oyun Tasarımı: Canavar İstilası!", en: "2D Game Design with Godot: Monster Invasion!" },
+      desc: { tr: "Godot oyun motoruyla kendi 2D oyununu yap: karakter hareketi, düşmanlar, çarpışmalar ve skor.",
+              en: "Make your own 2D game in the Godot engine: player movement, enemies, collisions and a score." } },
+    { cat: "ai", pg: "plot",
+      title: { tr: "Julia ile Modelleme ve Görselleştirme", en: "Modelling and Visualisation with Julia" },
+      desc: { tr: "Matematiksel ve fiziksel kavramları Julia programlama diliyle modelle. Önce durağan, sonra zamana bağlı modeller kurup kütüphanelerle görselleştiriyorsun.",
+              en: "Model mathematical and physical ideas in the Julia language — first static, then time-dependent models — and visualise them with its libraries." } },
+    { cat: "design", pg: "sticker",
+      title: { tr: "Kendi Sticker'ını Tasarla: Grafik Tasarım ve Sticker Baskı Atölyesi", en: "Design Your Own Sticker: Graphic Design and Sticker Printing" },
+      desc: { tr: "Grafik tasarımın temelleriyle kendi sticker'ını çiz, kesim hattını hazırla ve bas.",
+              en: "Learn graphic design basics, draw your own sticker, prepare its cut line and print it." } },
+    { cat: "code", pg: "qubit",
+      title: { tr: "Kuantum Bilişim", en: "Quantum Computing" },
+      desc: { tr: "Kübitler, süperpozisyon ve ölçüm: bu yılın temasının arkasındaki bilimi kuantum devreleriyle keşfet.",
+              en: "Qubits, superposition and measurement: explore the science behind this year's theme with quantum circuits." } },
+    { cat: "fab", pg: "layers",
+      title: { tr: "Lazer Kesim ile Katmanlı Üretim: Tasarla, Kes, İnşa Et", en: "Layered Making with Laser Cutting: Design, Cut, Build" },
+      desc: { tr: "Bir 3D formu katmanlara böl, lazerle kes ve üst üste dizerek inşa et.",
+              en: "Slice a 3D form into layers, laser-cut them and stack them into a real object." } },
+    { cat: "robotics", pg: "robot",
+      title: { tr: "Lemon: Biyo-İlhamlı Robotlar İnşa Etmek", en: "Lemon: Building Bio-inspired Robots" },
+      desc: { tr: "Lemon, yeni başlayanların mekanik, elektronik, 3D tasarım ve biyomimetik robotlar hakkında bilgisini geliştiren bir robotik eğitim kiti. Bir robot yapmanın her adımını keşfediyorsun.",
+              en: "Lemon is a robotics kit that helps beginners learn mechanics, electronics, 3D design and biomimetic robots while discovering every step of making a robot." } },
+    { cat: "fab", pg: "joint",
+      title: { tr: "Onshape ile Kendi Eklemli Hayvanını Tasarla", en: "Design Your Own Jointed Animal in Onshape" },
+      desc: { tr: "Onshape'te hareketli eklemleri olan bir hayvan tasarla; parçaları birleştir, eklemleri test et ve üretime hazırla.",
+              en: "Design an animal with moving joints in Onshape: assemble the parts, test the joints and get it ready to make." } },
+    { cat: "code", pg: "cyber",
+      title: { tr: "Siber Güvenlik Atölyesi: Modem Sızma Testi", en: "Cybersecurity Workshop: Router Penetration Testing" },
+      desc: { tr: "Bir hacker gibi düşün: güvenli bir test ortamında bir modemin zayıf noktalarını bul ve bu saldırılara karşı nasıl korunacağını öğren.",
+              en: "Think like a hacker: find the weak spots of a router in a safe test lab, and learn how to defend against those attacks." } },
+    { cat: "innovation", pg: "impact",
+      title: { tr: "Technovation Girls: Etki İçin Prototipleme", en: "Technovation Girls: Prototyping for Impact" },
+      desc: { tr: "Gerçek bir topluluk problemini seç, bir uygulama fikri geliştir ve hızlıca prototipini çıkar.",
+              en: "Pick a real problem in your community, shape an app idea around it and prototype it fast." } },
+    { cat: "electronics", pg: "robot",
+      title: { tr: "micro:bit ile Kartondan Robot Yapımı", en: "Cardboard Robots with micro:bit" },
+      desc: { tr: "Kartondan robot arabalar yap, micro:bit ile programla ve temel elektroniği öğren. Atölyenin sonunda kendi tasarladığın robotu yarıştırıyorsun.",
+              en: "Build cardboard robot cars, program them with micro:bit and learn basic electronics — then race the robot you designed." } },
+    { cat: "ai", pg: "vision",
+      title: { tr: "Swift Playground: Görüntü Tanıma Uygulaması", en: "Swift Playground: An Image Recognition App" },
+      desc: { tr: "Swift ve Xcode ile görüntüleri tanıyan bir uygulama yaz: kamera, model ve arayüzü bir araya getir.",
+              en: "Write an app that recognises images with Swift and Xcode, bringing the camera, a model and the interface together." } },
+    { cat: "robotics", pg: "robot",
+      title: { tr: "PiWars Yarışması: Robot Tasarımı", en: "PiWars Challenge: Robot Design" },
+      desc: { tr: "Raspberry Pi tabanlı robotlarla PiWars görevlerine hazırlan: tasarım, sensörler ve parkur stratejisi.",
+              en: "Get ready for PiWars challenges with Raspberry Pi robots: design, sensors and course strategy." } },
+    { cat: "fab", pg: "joint",
+      title: { tr: "TinkerCad ile Snap-Fit 3D Oyuncak Tasarımı ve Üretimi", en: "Snap-Fit 3D Toy Design and Making in Tinkercad" },
+      desc: { tr: "Yapıştırıcısız, birbirine geçen parçalardan oluşan bir oyuncak tasarla ve 3D yazıcıda üret.",
+              en: "Design a toy from parts that click together without glue, then 3D print it." } },
+    { cat: "ai", pg: "music",
+      title: { tr: "Yapay Zekâ ile Müzik Üretimi: Java Atölyesi", en: "Making Music with AI: A Java Workshop" },
+      desc: { tr: "Java ile notaları kodla ve basit bir yapay zekâ modelinin melodi üretmesini sağla.",
+              en: "Code notes in Java and let a simple AI model generate melodies." } },
+    { cat: "ai", pg: "plot",
+      title: { tr: "Wolfram ile Veri Analizi", en: "Data Analysis with Wolfram" },
+      desc: { tr: "Wolfram Dili ile gerçek verileri topla, analiz et ve etkileşimli grafiklerle görselleştir.",
+              en: "Collect, analyse and visualise real data with interactive charts in the Wolfram Language." } },
+    { cat: "fab", pg: "sticker",
+      title: { tr: "Vinil Kesim", en: "Vinyl Cutting" },
+      desc: { tr: "Vektör çizimini vinil kesim makinesine hazırla, kes ve yüzeye uygula.",
+              en: "Prepare a vector drawing for the vinyl cutter, cut it and apply it to a surface." } },
+    { cat: "fab", pg: "cnc",
+      title: { tr: "Haas CNC", en: "Haas CNC" },
+      desc: { tr: "Endüstriyel bir Haas CNC tezgâhının nasıl çalıştığını öğren: takım yolları, G-kodu ve güvenli üretim.",
+              en: "See how an industrial Haas CNC machine works: toolpaths, G-code and safe machining." } },
+    { cat: "design", pg: "video",
+      title: { tr: "Video Editing", en: "Video Editing" },
+      desc: { tr: "Kurgu, renk ve ses: çektiğin görüntülerden kısa ve etkili bir video çıkar.",
+              en: "Cutting, colour and sound: turn your footage into a short video that lands." } },
+    { cat: "design", pg: "generative",
+      title: { tr: "FabArt: Sürdürülebilir Estetik", en: "FabArt: Sustainable Aesthetics" },
+      desc: { tr: "Dijital üretim araçları ve geri dönüştürülmüş malzemelerle sürdürülebilir bir sanat eseri tasarla.",
+              en: "Design a sustainable art piece with digital fabrication tools and reclaimed materials." } },
+    { cat: "electronics", pg: "pcb",
+      title: { tr: "PCB", en: "PCB Design" },
+      desc: { tr: "Bir devreyi şemadan baskı devre kartına taşı: yerleşim, yollar ve üretim.",
+              en: "Take a circuit from schematic to printed circuit board: placement, traces and fabrication." } },
+    { cat: "fab", pg: "sticker",
+      title: { tr: "Brother Nakış Makinesi", en: "Brother Embroidery Machine" },
+      desc: { tr: "Kendi desenini dijital nakışa dönüştür ve Brother nakış makinesinde kumaşa işle.",
+              en: "Turn your own pattern into digital embroidery and stitch it onto fabric on a Brother machine." } },
+    { cat: "code", pg: "vibe",
+      title: { tr: "Vibe Coding: Yapay Zekâ ile Uygulama Yap", en: "Vibe Coding: Build Apps with AI" },
+      desc: { tr: "Ne istediğini anlat, yapay zekâ kodlasın: fikirden çalışan bir uygulamaya, yapay zekâyla birlikte.",
+              en: "Describe what you want and let AI write the code: go from an idea to a working app, together with AI." } },
+    { cat: "electronics", pg: "ml",
+      title: { tr: "Tiny ML: Yapay Zekâ Elektronikle Buluşuyor", en: "Tiny ML: AI Meets Electronics" },
+      desc: { tr: "Küçük mikrodenetleyicilerde çalışan yapay zekâ modelleri: sensör verisi topla, modeli eğit, karta yükle.",
+              en: "AI models that run on tiny microcontrollers: collect sensor data, train a model and put it on the board." } },
+    { cat: "design", pg: "generative",
+      title: { tr: "Creative Coding: Sanat ve Algoritmalar", en: "Creative Coding: Art Meets Algorithms" },
+      desc: { tr: "Kodla çizim yap: döngüler, rastgelelik ve matematikle canlı, etkileşimli sanat eserleri üret.",
+              en: "Draw with code: use loops, randomness and maths to make living, interactive art." } },
+    { cat: "design", pg: "generative",
+      title: { tr: "Generative Design: Kodla Üret", en: "Generative Design: Code to Create" },
+      desc: { tr: "Kuralları sen yaz, tasarımı algoritma üretsin: parametrelerle oynayarak sonsuz varyasyon keşfet.",
+              en: "You write the rules, the algorithm makes the design: play with parameters to explore endless variations." } }
+  ],
+
+  // Times follow last year's structure; titles stay placeholders until the program is announced.
+  program: [
+    { id: "d1", label: { en: "Fri · 18 Dec", tr: "Cuma · 18 Aralık" }, slots: [
+      { time: "09:00 – 12:00", title: { en: "1st session", tr: "1. oturum" }, note: { en: "To be announced", tr: "Açıklanacak" } },
+      { time: "12:00 – 15:30", title: { en: "2nd session", tr: "2. oturum" }, note: { en: "To be announced", tr: "Açıklanacak" } },
+      { time: "17:00", title: { en: "Talk", tr: "Konuşma" }, note: { en: "Speaker to be announced", tr: "Konuşmacı açıklanacak" } }
+    ] },
+    { id: "d2", label: { en: "Sat · 19 Dec", tr: "Cumartesi · 19 Aralık" }, slots: [
+      { time: "09:00 – 09:30", title: { en: "Welcome", tr: "Karşılama" }, note: { en: "To be announced", tr: "Açıklanacak" } },
+      { time: "09:30 – 10:00", title: { en: "Opening", tr: "Açılış" }, note: { en: "To be announced", tr: "Açıklanacak" } },
+      { time: "10:10 – 12:10", title: { en: "1st session", tr: "1. oturum" }, note: { en: "To be announced", tr: "Açıklanacak" } },
+      { time: "12:10 – 12:50", title: { en: "Lunch", tr: "Öğle arası" }, note: { en: "To be announced", tr: "Açıklanacak" } },
+      { time: "12:50 – 14:20", title: { en: "2nd session", tr: "2. oturum" }, note: { en: "To be announced", tr: "Açıklanacak" } },
+      { time: "14:30 – 16:00", title: { en: "3rd session", tr: "3. oturum" }, note: { en: "To be announced", tr: "Açıklanacak" } },
+      { time: "16:30 – 17:00", title: { en: "Closing", tr: "Kapanış" }, note: { en: "To be announced", tr: "Açıklanacak" } }
+    ] }
+  ]
 };
