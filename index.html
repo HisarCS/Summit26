@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quantum Leap — 13th Hisar Coding Summit</title>
+  <meta name="description" content="The official information and registration website for the 13th Hisar Coding Summit: Quantum Leap. FabLab students, to anyone who wants to learn." />
+  <meta name="theme-color" content="#0b3f8f" />
+  <meta property="og:title" content="Quantum Leap — 13th Hisar Coding Summit" />
+  <meta property="og:description" content="FabLab students. To anyone who wants to learn." />
+  <link rel="icon" href="legacy/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;500&family=Montserrat:wght@300;400;500;600;700&family=Orbitron:wght@500;700;900&family=Plus+Jakarta+Sans:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <canvas id="smoke" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <a class="nav__brand" href="#top" aria-label="Hisar Coding Summit home">
+      <img src="assets/img/idealab-white.png" alt="idealab" />
+      <span>CODING SUMMIT 13</span>
+    </a>
+    <nav class="nav__links" id="navlinks">
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#workshops" data-i18n="nav.workshops">Workshops</a>
+      <a href="#program" data-i18n="nav.program">Program</a>
+      <a href="#join" data-i18n="nav.join">Join</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="nav__right">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="tr" aria-pressed="false">TR</button>
+      </div>
+      <button class="nav__burger" id="burger" type="button" aria-label="Menu" aria-expanded="false"><i></i><i></i></button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__inner">
+        <div class="hero__edition reveal" data-i18n="hero.edition">13th</div>
+        <div class="hero__summit reveal">CODING SUMMIT</div>
+        <h1 class="title" id="title" aria-label="Quantum Leap">
+          <span class="row" data-scramble="QUANTUM">QUANTUM</span>
+          <span class="row" data-scramble="LEAP">LEAP</span>
+        </h1>
+        <p class="hero__tag reveal" data-i18n="hero.tag">FabLab students. To anyone who wants to learn</p>
+
+        <div class="hero__stage" id="stage">
+          <canvas id="ring" aria-hidden="true"></canvas>
+          <div class="hero__hint" data-i18n="hero.hint">move · click to collapse the wave</div>
+        </div>
+
+        <div class="infobar reveal">
+          <div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+            <div><strong id="dateText">—</strong><small data-i18n="hero.date">Date</small></div>
+          </div>
+          <div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+            <div><strong>Hisar FabLab</strong><small>Hisar Okulları | İSTANBUL</small></div>
+          </div>
+          <div>
+            <div class="count" id="countdown" aria-live="off">—</div>
+          </div>
+        </div>
+
+        <div class="hero__cta reveal">
+          <a class="btn" href="#workshops"><span data-i18n="hero.cta1">Explore workshops</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn--ghost" href="#join"><span data-i18n="hero.cta2">Join the summit</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARTNERS -->
+    <div class="partners">
+      <div class="wrap">
+        <span class="p"><img src="assets/img/idealab-white.png" alt="" />Hisar FabLab</span>
+        <span class="p"><i class="dot" style="background:var(--red)"></i>Fab Academy</span>
+        <span class="p"><i class="dot" style="background:var(--yellow)"></i>Fab Foundation</span>
+        <span class="p"><i class="dot" style="background:var(--cream)"></i>MIT Edgerton Center</span>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="wrap about__grid">
+        <div class="reveal">
+          <span class="eyebrow" data-i18n="about.eyebrow">Coding since 2013</span>
+          <h2 class="h2" data-i18n-html="about.title">A decade+ of<br><em>leaps</em></h2>
+          <p class="lead" data-i18n="about.p1">Hisar Coding Summit was created to grow our students' potential through digital transformation. This year it is held for the 13th time at Hisar Schools — in English and Turkish, taught by FabLab students to anyone who wants to learn.</p>
+          <p class="lead" data-i18n="about.p2">Idealab, Hisar's FabLab, has been the heartbeat of innovation for over a decade: a maker space where creativity and collaboration turn ideas into real things.</p>
+          <div class="swatches" aria-hidden="true">
+            <i style="background:var(--cream)"></i><i style="background:var(--navy)"></i><i style="background:var(--blue);outline:1px solid var(--line)"></i><i style="background:var(--red)"></i><i style="background:var(--yellow)"></i>
+          </div>
+        </div>
+        <div class="stats reveal">
+          <div class="stat"><b data-count="13">0</b><span data-i18n="about.s1">Editions</span></div>
+          <div class="stat"><b id="wsCountStat" data-count="0">0</b><span data-i18n="about.s2">Workshops</span></div>
+          <div class="stat"><b data-count="2">0</b><span data-i18n="about.s3">Languages</span></div>
+          <div class="stat"><b data-count="2013">0</b><span data-i18n="about.s4">Since</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true"><div class="marquee__track" id="mq1"></div></div>
+    <div class="marquee marquee--y" aria-hidden="true"><div class="marquee__track" id="mq2"></div></div>
+
+    <!-- WORKSHOPS -->
+    <section class="section" id="workshops">
+      <div class="wrap">
+        <div class="ws__head reveal">
+          <div>
+            <span class="eyebrow" data-i18n="ws.eyebrow">Student-led workshops</span>
+            <h2 class="h2" data-i18n-html="ws.title">Pick your<br><em>state</em></h2>
+          </div>
+          <span class="ws__count" id="wsCount"></span>
+        </div>
+        <div class="ws__tools reveal">
+          <label class="search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <input id="q" type="search" data-i18n-ph="ws.search" placeholder="Search workshops…" autocomplete="off" />
+          </label>
+          <div class="chips" id="chips"></div>
+        </div>
+        <div class="grid" id="grid"></div>
+      </div>
+    </section>
+
+    <!-- PROGRAM -->
+    <section class="section" id="program">
+      <div class="wrap">
+        <div class="reveal">
+          <span class="eyebrow" data-i18n="pg.eyebrow">Daily program</span>
+          <h2 class="h2" data-i18n-html="pg.title">The <em>timeline</em></h2>
+        </div>
+        <div class="tabs reveal" id="tabs" role="tablist"></div>
+        <div class="timeline reveal" id="timeline"></div>
+      </div>
+    </section>
+
+    <!-- JOIN -->
+    <section class="section" id="join">
+      <div class="wrap">
+        <div class="join reveal">
+          <span class="eyebrow" style="color:var(--cream)" data-i18n="join.eyebrow">Registration</span>
+          <h2 class="h2" data-i18n-html="join.title">Take the<br>leap</h2>
+          <p id="joinText" data-i18n="join.soon">Registration opens soon. Follow @hisarcs to be the first to know.</p>
+          <a class="btn" id="joinBtn" href="https://www.instagram.com/hisarcs/" target="_blank" rel="noopener">
+            <span id="joinBtnText" data-i18n="join.follow">Follow @hisarcs</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="foot" id="contact">
+    <div class="wrap">
+      <div class="foot__grid">
+        <div class="map">
+          <iframe title="Hisar School on the map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3003.1240632709323!2d28.889247776731327!3d41.17546117132762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab2efd52f489f%3A0xe7d088ae26b38280!2sHisar%20School!5e0!3m2!1sen!2str!4v1699703901148!5m2!1sen!2str"></iframe>
+        </div>
+        <div>
+          <h4 data-i18n="ft.where">Where to find us</h4>
+          <p>Göktürk Merkez, İstanbul Cd. No:3,<br>34077 Eyüpsultan / İstanbul, Türkiye</p>
+          <h4 style="margin-top:28px" data-i18n="ft.contact">Contact</h4>
+          <ul>
+            <li><a href="tel:+902123640000">+90 (212) 364 00 00</a></li>
+            <li><a href="mailto:hisarcs@hisarschool.k12.tr">hisarcs@hisarschool.k12.tr</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n="ft.follow">Follow</h4>
+          <ul>
+            <li><a href="https://www.instagram.com/hisarcs/" target="_blank" rel="noopener">Instagram — @hisarcs</a></li>
+            <li><a href="https://twitter.com/HisarCS" target="_blank" rel="noopener">X — @HisarCS</a></li>
+            <li><a href="https://hisarcs.github.io/" target="_blank" rel="noopener">HisarCS</a></li>
+          </ul>
+          <img src="assets/img/hisar.png" alt="Hisar Okulları" style="height:44px;width:auto;margin-top:28px;opacity:.85" />
+        </div>
+      </div>
+
+      <div class="foot__big" aria-hidden="true">QUANTUM LEAP</div>
+
+      <div class="legacy">
+        <small data-i18n="ft.legacy">Looking for last year's site?</small>
+        <a class="legacy__btn" id="legacyBtn" href="legacy/">
+          <span class="badge">LEGACY</span>
+          <img src="assets/img/idealab-white.png" alt="" />
+          <span>Coding Summit 11</span>
+        </a>
+      </div>
+      <p class="copy">© <span id="yr"></span> HisarCS · Hisar FabLab idealab</p>
+    </div>
+  </footer>
+
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal__bg" data-close></div>
+    <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+      <button class="modal__close" type="button" data-close aria-label="Close">×</button>
+      <span class="card__no" id="mNo"></span>
+      <h3 id="mTitle"></h3>
+      <p id="mDesc"></p>
+      <dl id="mMeta"></dl>
+    </div>
+  </div>
+
+  <div class="rewind" id="rewind" aria-hidden="true"><span>◂◂ REWINDING TO CODING SUMMIT 11</span></div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
