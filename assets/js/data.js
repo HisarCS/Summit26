@@ -13,7 +13,7 @@ window.SUMMIT = {
     email: "idealab@hisarschool.k12.tr",
     instagram: "https://www.instagram.com/hisarcs/",
     linkedin: "",
-    frc: "https://www.thebluealliance.com/team/6431",
+    frc: "https://6431.hisarschool.k12.tr/",
     hisarcs: "https://hisarcs.github.io/",
     previous: [
       { label: { en: "Hisar Coding Summit 2022", tr: "Hisar Coding Summit 2022" }, href: "https://hisarcs.github.io/Web/" },
