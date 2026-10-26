@@ -13,7 +13,7 @@
       "hero.org": "Organised by", "ws.hint": "scroll ↓ to travel · click a card to play", "ws.play": "Open playground",
       "ask.eyebrow": "Contact", "ask.title": "Got a <em>question?</em>", "ask.text": "Write to us about workshops, registration or anything else — we're happy to help.",
       "ask.mail": "Email", "ask.phone": "Phone", "ft.org": "Organised by", "ft.prev": "Previous summits", "pg.label": "Playground",
-      "nav.about": "About", "nav.workshops": "Workshops", "nav.program": "Program", "nav.join": "Join", "nav.contact": "Contact",
+      "nav.about": "About", "nav.workshops": "Workshops", "nav.program": "Program", "nav.join": "Join", "nav.archive": "Archive", "ar.eyebrow": "Past summits", "ar.title": "Twelve <em>leaps</em> so far", "ar.site": "SITE", "ar.wayback": "ARCHIVE", "ar.source": "SOURCE", "ar.missing": "Not online yet", "ar.ed": "Summit", "nav.contact": "Contact",
       "hero.edition": "13th", "hero.tag": "FabLab students. To anyone who wants to learn",
       "hero.hint": "move · click to collapse the wave", "hero.date": "Date",
       "hero.cta1": "Explore workshops", "hero.cta2": "Join the summit",
@@ -44,7 +44,7 @@
       "hero.org": "Düzenleyen", "ws.hint": "ilerlemek için aşağı kaydır · oynamak için karta tıkla", "ws.play": "Playground'u aç",
       "ask.eyebrow": "İletişim", "ask.title": "Sorun mu <em>var?</em>", "ask.text": "Atölyeler, kayıt ya da aklına takılan her şey için bize yaz — yardımcı olmaktan mutluluk duyarız.",
       "ask.mail": "E-posta", "ask.phone": "Telefon", "ft.org": "Düzenleyen", "ft.prev": "Önceki summitler", "pg.label": "Playground",
-      "nav.about": "Hakkında", "nav.workshops": "Atölyeler", "nav.program": "Program", "nav.join": "Katıl", "nav.contact": "İletişim",
+      "nav.about": "Hakkında", "nav.workshops": "Atölyeler", "nav.program": "Program", "nav.join": "Katıl", "nav.archive": "Arşiv", "ar.eyebrow": "Önceki summitler", "ar.title": "Şimdiye kadar on iki <em>sıçrama</em>", "ar.site": "SİTE", "ar.wayback": "ARŞİV", "ar.source": "KAYNAK", "ar.missing": "Henüz çevrimiçi değil", "ar.ed": "Summit", "nav.contact": "İletişim",
       "hero.edition": "13.", "hero.tag": "FabLab öğrencilerinden öğrenmek isteyen herkese",
       "hero.hint": "fareyi gezdir · dalgayı çökertmek için tıkla", "hero.date": "Tarih",
       "hero.cta1": "Atölyeleri keşfet", "hero.cta2": "Summit'e katıl",
@@ -84,7 +84,7 @@
     $$("[data-i18n-ph]").forEach(el => { el.placeholder = t(el.dataset.i18nPh); });
     $$(".lang button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
     $("#dateText").textContent = pick(S.dateLabel) || "TBA";
-    buildMarquee(); renderChips(); renderGrid(); renderProgram(); renderJoin(); renderLinks(); tickCountdown();
+    buildMarquee(); renderChips(); renderGrid(); renderProgram(); renderJoin(); renderLinks(); renderArchive(); tickCountdown();
   }
   $$(".lang button").forEach(b => b.addEventListener("click", () => {
     lang = b.dataset.lang;
@@ -432,6 +432,21 @@
       `<a class="ask__link" href="${esc(href)}"${href.startsWith("http") ? ' target="_blank" rel="noopener"' : ""}><span class="ask__ic">${ic}</span><span><small>${esc(lab)}</small><b>${esc(val)}</b></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>`).join("");
     $("#prevLinks").innerHTML = (Lk.previous || []).map(p =>
       `<li><a href="${esc(p.href)}"${p.href.startsWith("http") ? ' target="_blank" rel="noopener"' : ""}>${esc(pick(p.label))} ↗</a></li>`).join("");
+  }
+
+  /* ---------------- archive ---------------- */
+  function renderArchive() {
+    $("#archiveGrid").innerHTML = (S.archive || []).map(a => {
+      const inner = `<span class="acard__no">${esc(a.mark || a.no)}</span>
+        <span class="acard__date">${esc(pick(a.date))}</span>
+        ${a.title ? `<span class="acard__title">${esc(pick(a.title))}</span>` : ""}
+        ${a.note ? `<span class="acard__note">${esc(pick(a.note))}</span>` : ""}
+        <span class="acard__badge">${esc(t("ar." + (a.kind === "local" ? "site" : a.kind)))}</span>`;
+      const label = `${t("ar.ed")} ${a.no}`;
+      if (!a.href) return `<div class="acard acard--${a.kind}" aria-label="${esc(label)}">${inner}</div>`;
+      const ext = a.href.startsWith("http") ? ' target="_blank" rel="noopener"' : "";
+      return `<a class="acard acard--${a.kind}" href="${esc(a.href)}"${ext} aria-label="${esc(label + " · " + pick(a.date))}">${inner}</a>`;
+    }).join("");
   }
 
   /* ---------------- program ---------------- */

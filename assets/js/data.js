@@ -16,12 +16,26 @@ window.SUMMIT = {
     frc: "https://www.thebluealliance.com/team/6431",
     hisarcs: "https://hisarcs.github.io/",
     previous: [
-      { label: { en: "Coding Summit 11 (2024)", tr: "Coding Summit 11 (2024)" }, href: "legacy/" },
       { label: { en: "Hisar Coding Summit 2022", tr: "Hisar Coding Summit 2022" }, href: "https://hisarcs.github.io/Web/" },
       { label: { en: "HisarCS events", tr: "HisarCS etkinlikleri" }, href: "https://hisarcs.github.io/events.html" },
       { label: { en: "HisarCS", tr: "HisarCS" }, href: "https://hisarcs.github.io/" }
     ]
   },
+
+  archive: [
+    { no: 12, date: { en: "12–13 Dec 2025", tr: "12–13 Aralık 2025" }, title: { en: "Crossing the Lines: New Frontiers", tr: "Crossing the Lines: New Frontiers" }, note: { en: "Never published — source only", tr: "Hiç yayınlanmadı — yalnızca kaynak kod" }, href: "https://github.com/hisarcs/Summit25", kind: "source" },
+    { no: 11, date: { en: "13–14 Dec 2024", tr: "13–14 Aralık 2024" }, href: "legacy/", kind: "local" },
+    { no: 10, date: { en: "2024", tr: "2024" }, mark: "X", kind: "missing" },
+    { no: 9, date: { en: "2023", tr: "2023" }, kind: "missing" },
+    { no: 8, date: { en: "2–3 Apr 2022 · virtual", tr: "2–3 Nisan 2022 · sanal" }, href: "https://web.archive.org/web/20221219204118/https://event.hisarcs.com/", kind: "wayback" },
+    { no: 7, date: { en: "2021", tr: "2021" }, href: "https://web.archive.org/web/20211130080913/https://event.hisarcs.com/", kind: "wayback" },
+    { no: 6, date: { en: "2020", tr: "2020" }, href: "https://web.archive.org/web/20201205122817/http://event.hisarcs.com/", kind: "wayback" },
+    { no: 5, date: { en: "2019", tr: "2019" }, href: "https://web.archive.org/web/20190916082949/http://event.hisarcs.com/", kind: "wayback" },
+    { no: 4, date: { en: "2018", tr: "2018" }, href: "https://web.archive.org/web/20180928203754/http://event.hisarcs.com/", kind: "wayback" },
+    { no: 3, date: { en: "2017", tr: "2017" }, href: "https://web.archive.org/web/20170509214955/http://event.hisarcs.com/", kind: "wayback" },
+    { no: 2, date: { en: "2016", tr: "2016" }, href: "https://web.archive.org/web/20160505045630/http://event.hisarcs.com/", kind: "wayback" },
+    { no: 1, date: { en: "20 May 2015", tr: "20 Mayıs 2015" }, href: "https://web.archive.org/web/20150520014621/http://event.hisarcs.com/", kind: "wayback" }
+  ],
 
   categories: {
     robotics: { en: "Robotics", tr: "Robotik", color: "#c52a43" },
