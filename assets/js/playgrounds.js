@@ -372,7 +372,7 @@
   PG.impact = (root, L) => builder(root, L, [
     { label: L("Who needs help?", "Kime yardım edelim?"), opts: [L("Elderly neighbours", "Yaşlı komşular"), L("Stray animals", "Sokak hayvanları"), L("New students", "Yeni öğrenciler"), L("Local shops", "Mahalle esnafı")] },
     { label: L("Which goal?", "Hangi hedef?"), opts: [L("Good health", "Sağlık"), L("Quality education", "Nitelikli eğitim"), L("Climate action", "İklim eylemi"), L("Zero hunger", "Açlığa son")] },
-    { label: L("Which tech?", "Hangi teknoloji?"), opts: [L("map + alerts", "harita + bildirim"), L("AI chatbot", "yapay zekâ sohbet"), L("QR + volunteers", "QR + gönüllüler")] }
+    { label: L("Which tech?", "Hangi teknoloji?"), opts: [L("map + alerts", "harita + bildirim"), L("AI chatbot", "yapay zeka sohbet"), L("QR + volunteers", "QR + gönüllüler")] }
   ], ([a, b, c]) => `<span class="pg__eyebrow">${L("App idea", "Uygulama fikri")}</span><p>${L(`An app for <b>${a.toLowerCase()}</b> using <b>${c}</b>, working toward <b>${b.toLowerCase()}</b>.`, `<b>${a}</b> için <b>${c}</b> kullanan, <b>${b.toLowerCase()}</b> hedefine çalışan bir uygulama.`)}</p><small>${L("Next: sketch 3 screens and test with one real user.", "Sıradaki: 3 ekran çiz, bir gerçek kullanıcıyla test et.")}</small>`);
 
   /* ---------- vision: draw a shape, the "model" guesses it ---------- */
@@ -501,7 +501,7 @@
     const presets = { [L("Original", "Orijinal")]: [100, 100, 100, 0], [L("Warm", "Sıcak")]: [105, 105, 125, -12], [L("Cool", "Soğuk")]: [100, 110, 90, 18], [L("Mono", "S/B")]: [105, 130, 0, 0], [L("Cinematic", "Sinematik")]: [92, 125, 80, -6] };
     const sliders = [["b", L("Brightness", "Parlaklık"), 40, 160], ["c", L("Contrast", "Kontrast"), 40, 180], ["s", L("Saturation", "Doygunluk"), 0, 200], ["hu", L("Hue", "Ton"), -60, 60]].map(([k, lab, mn, mx]) => slider(lab, mn, mx, f[k], 1, v => f[k] = v));
     root.append(bar(...Object.entries(presets).map(([n, v]) => btn(n, () => { [f.b, f.c, f.s, f.hu] = v; sliders.forEach((el, i) => { const inp = el.querySelector("input"); inp.value = v[i]; el.querySelector("output").textContent = v[i]; }); }))),
-      bar(...sliders), note(L("Colour grading sets the mood of a cut. Same footage, different story.", "Renk düzenleme kurgunun havasını belirler. Aynı görüntü, farklı hikâye.")));
+      bar(...sliders), note(L("Colour grading sets the mood of a cut. Same footage, different story.", "Renk düzenleme kurgunun havasını belirler. Aynı görüntü, farklı hikaye.")));
     const stop = loop(t => {
       const { ctx, w, h: H } = s;
       ctx.filter = `brightness(${f.b}%) contrast(${f.c}%) saturate(${f.s}%) hue-rotate(${f.hu}deg)`;
@@ -617,7 +617,7 @@
     root.append(h("div", { class: "pg__row" }, inp, btn(L("Generate", "Üret"), go, "is-on")),
       h("div", { class: "pg__chips" }, sug.map(t => h("button", { type: "button", class: "pg__chip", onclick: () => { inp.value = t; go(); } }, t))),
       h("div", { class: "pg__split" }, codeEl, prev),
-      note(L("Simulated: this demo matches keywords to ready-made snippets. In the workshop a real AI model writes the code from your words.", "Simülasyon: bu demo anahtar kelimeleri hazır kod parçalarıyla eşleştirir. Atölyede gerçek bir yapay zekâ modeli kodu senin sözlerinden yazıyor.")));
+      note(L("Simulated: this demo matches keywords to ready-made snippets. In the workshop a real AI model writes the code from your words.", "Simülasyon: bu demo anahtar kelimeleri hazır kod parçalarıyla eşleştirir. Atölyede gerçek bir yapay zeka modeli kodu senin sözlerinden yazıyor.")));
     go();
     return () => clearInterval(typing);
   };
