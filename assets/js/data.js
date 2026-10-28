@@ -9,7 +9,7 @@ window.SUMMIT = {
   dateLabel: { en: "18–19 DEC 2026", tr: "18–19 ARALIK 2026" },
   registrationUrl: "",
   // Google Apps Script web-app URL that receives the registration form (POST, text/plain JSON). Empty = "opens soon".
-  registrationEndpoint: "",
+  registrationEndpoint: "https://script.google.com/macros/s/AKfycbxKrWLGIs22U5VpLgRlXYqRsiao5HuSTrU_-JAiUEo-iiqvwEKa8dMmhVyl6s-2Euqp7g/exec",
 
   links: {
     email: "idealab@hisarschool.k12.tr",
