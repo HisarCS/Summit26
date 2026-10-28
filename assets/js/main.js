@@ -10,18 +10,18 @@
   /* ---------------- i18n ---------------- */
   const T = {
     en: {
-      "hero.org": "Organised by", "ws.hint": "scroll ↓ to travel · click a card to play", "ws.play": "Open playground",
+      "hero.org": "Organised by", "ws.play": "Open playground",
       "ask.eyebrow": "Contact", "ask.title": "Got a <em>question?</em>", "ask.text": "Write to us about workshops, registration or anything else — we're happy to help.",
       "ask.mail": "Email", "ask.phone": "Phone", "ft.org": "Organised by", "ft.prev": "Previous summits", "pg.label": "Playground",
       "nav.about": "About", "nav.workshops": "Workshops", "nav.program": "Program", "nav.join": "Join", "nav.archive": "Archive", "ar.eyebrow": "Past summits", "ar.title": "Twelve <em>leaps</em> so far", "ar.site": "SITE", "ar.wayback": "ARCHIVE", "ar.source": "SOURCE", "ar.missing": "Not online yet", "ar.ed": "Summit", "nav.contact": "Contact",
-      "hero.edition": "13th", "hero.tag": "FabLab students. To anyone who wants to learn",
+      "hero.edition": "13th", "hero.tag": "FROM FABLAB STUDENTS. TO ANYONE WHO WANTS TO LEARN",
       "hero.hint": "move · click to collapse the wave", "hero.date": "Date",
       "hero.cta1": "Explore workshops", "hero.cta2": "Join the summit",
       "about.eyebrow": "Coding since 2013", "about.title": "A decade+ of<br><em>leaps</em>",
       "about.p1": "Hisar Coding Summit was created to grow our students' potential through digital transformation. On 18–19 December 2026 the 13th annual summit, Quantum Leap, comes to Hisar Schools — organised by FRC Team 6431, in English and Turkish, taught by FabLab students to anyone who wants to learn.",
-      "about.p2": "Idealab, Hisar's FabLab, has been the heartbeat of innovation for over a decade: a maker space where creativity and collaboration turn ideas into real things.",
+      "about.p2": "Hisar FabLab has been the heartbeat of innovation for over a decade: a maker space where creativity and collaboration turn ideas into real things.",
       "about.s1": "Editions", "about.s2": "Workshops", "about.s3": "Languages", "about.s4": "Since",
-      "ws.eyebrow": "Student-led workshops", "ws.title": "Pick your <em>state</em>", "ws.search": "Search workshops…",
+      "ws.eyebrow": (n, d) => `${n} workshops · ${d} days`, "ws.title": "Student <em>workshops</em>", "ws.search": "Search workshops…",
       "ws.all": "All", "ws.count": n => `${n} WORKSHOP${n === 1 ? "" : "S"}`,
       "ws.none": "No workshop matches", "ws.noneHint": "Try another filter or search word.",
       "ws.soon": "Workshops are being finalized", "ws.soonHint": "The lesson list for this year lands here soon.",
@@ -32,27 +32,27 @@
       "pg.soon": "The program will be announced soon.",
       "join.eyebrow": "Registration", "join.title": "Take the<br>leap",
       "join.soon": "Registration opens soon. Follow @hisarcs to be the first to know.",
-      "join.open": "Registration is open. Seats in each workshop are limited.",
-      "join.follow": "Follow @hisarcs", "join.register": "Register now",
+      "join.open": "Registration is open. Pick your workshops and take the leap — seats in each workshop are limited.",
+      "join.follow": "Follow @hisarcs", "join.register": "Register",
       "ft.where": "Where to find us", "ft.contact": "Contact", "ft.follow": "Follow",
       "ft.legacy": "Looking for last year's site?",
       "cd.d": "d", "cd.h": "h", "cd.m": "m", "cd.s": "s", "cd.live": "Happening now", "cd.done": "See you next year",
       "mq1": ["QUANTUM LEAP", "13TH CODING SUMMIT", "HISAR FABLAB", "LEARN · BUILD · LEAP"],
-      "mq2": ["FABLAB STUDENTS", "TO ANYONE WHO WANTS TO LEARN", "IDEALAB", "SINCE 2013"]
+      "mq2": ["FABLAB STUDENTS", "TO ANYONE WHO WANTS TO LEARN", "FABLAB", "SINCE 2013"]
     },
     tr: {
-      "hero.org": "Düzenleyen", "ws.hint": "ilerlemek için aşağı kaydır · oynamak için karta tıkla", "ws.play": "Playground'u aç",
+      "hero.org": "Düzenleyen", "ws.play": "Playground'u aç",
       "ask.eyebrow": "İletişim", "ask.title": "Sorun mu <em>var?</em>", "ask.text": "Atölyeler, kayıt ya da aklına takılan her şey için bize yaz — yardımcı olmaktan mutluluk duyarız.",
       "ask.mail": "E-posta", "ask.phone": "Telefon", "ft.org": "Düzenleyen", "ft.prev": "Önceki summitler", "pg.label": "Playground",
       "nav.about": "Hakkında", "nav.workshops": "Atölyeler", "nav.program": "Program", "nav.join": "Katıl", "nav.archive": "Arşiv", "ar.eyebrow": "Önceki summitler", "ar.title": "Şimdiye kadar on iki <em>sıçrama</em>", "ar.site": "SİTE", "ar.wayback": "ARŞİV", "ar.source": "KAYNAK", "ar.missing": "Henüz çevrimiçi değil", "ar.ed": "Summit", "nav.contact": "İletişim",
-      "hero.edition": "13.", "hero.tag": "FabLab öğrencilerinden öğrenmek isteyen herkese",
+      "hero.edition": "13.", "hero.tag": "FABLAB ÖĞRENCİLERİNDEN. ÖĞRENMEK İSTEYEN HERKESE.",
       "hero.hint": "fareyi gezdir · dalgayı çökertmek için tıkla", "hero.date": "Tarih",
       "hero.cta1": "Atölyeleri keşfet", "hero.cta2": "Summit'e katıl",
       "about.eyebrow": "2013'ten beri kodluyoruz", "about.title": "On yılı aşkın<br><em>sıçrama</em>",
       "about.p1": "Hisar Coding Summit, öğrencilerimizin potansiyelini dijital dönüşüm kapsamında geliştirmek için kuruldu. 13. Geleneksel Coding Summit: Quantum Leap, 18–19 Aralık 2026'da Hisar Okulları'nda — FRC Takımı 6431 düzenliyor; İngilizce ve Türkçe, FabLab öğrencilerinden öğrenmek isteyen herkese.",
-      "about.p2": "Hisar'ın FabLab'ı Idealab, on yılı aşkın süredir inovasyonun kalbi: yaratıcılığın ve iş birliğinin fikirleri gerçeğe dönüştürdüğü bir üretim alanı.",
+      "about.p2": "Hisar FabLab, on yılı aşkın süredir inovasyonun kalbi: yaratıcılığın ve iş birliğinin fikirleri gerçeğe dönüştürdüğü bir üretim alanı.",
       "about.s1": "Edisyon", "about.s2": "Atölye", "about.s3": "Dil", "about.s4": "Başlangıç",
-      "ws.eyebrow": "Öğrenci atölyeleri", "ws.title": "Durumunu <em>seç</em>", "ws.search": "Atölye ara…",
+      "ws.eyebrow": (n, d) => `${n} atölye · ${d} gün`, "ws.title": "Öğrenci <em>atölyeleri</em>", "ws.search": "Atölye ara…",
       "ws.all": "Tümü", "ws.count": n => `${n} ATÖLYE`,
       "ws.none": "Eşleşen atölye yok", "ws.noneHint": "Başka bir filtre ya da kelime dene.",
       "ws.soon": "Atölyeler kesinleşiyor", "ws.soonHint": "Bu yılın ders listesi çok yakında burada.",
@@ -63,13 +63,13 @@
       "pg.soon": "Program yakında açıklanacak.",
       "join.eyebrow": "Kayıt", "join.title": "Sıçramaya<br>hazır mısın",
       "join.soon": "Kayıtlar çok yakında açılıyor. İlk sen duymak için @hisarcs'ı takip et.",
-      "join.open": "Kayıtlar açık. Her atölyenin kontenjanı sınırlı.",
-      "join.follow": "@hisarcs'ı takip et", "join.register": "Hemen kaydol",
+      "join.open": "Kayıtlar açık. Atölyelerini seç ve sıçra — her atölyenin kontenjanı sınırlı.",
+      "join.follow": "@hisarcs'ı takip et", "join.register": "Kayıt ol",
       "ft.where": "Bizi nerede bulursun", "ft.contact": "İletişim", "ft.follow": "Takip et",
       "ft.legacy": "Geçen yılın sitesini mi arıyorsun?",
       "cd.d": "g", "cd.h": "s", "cd.m": "d", "cd.s": "sn", "cd.live": "Şu an devam ediyor", "cd.done": "Seneye görüşmek üzere",
       "mq1": ["QUANTUM LEAP", "13. CODING SUMMIT", "HISAR FABLAB", "ÖĞREN · ÜRET · SIÇRA"],
-      "mq2": ["FABLAB ÖĞRENCİLERİ", "ÖĞRENMEK İSTEYEN HERKESE", "IDEALAB", "2013'TEN BERİ"]
+      "mq2": ["FABLAB ÖĞRENCİLERİ", "ÖĞRENMEK İSTEYEN HERKESE", "FABLAB", "2013'TEN BERİ"]
     }
   };
   let lang = "en";
@@ -84,6 +84,7 @@
     $$("[data-i18n-ph]").forEach(el => { el.placeholder = t(el.dataset.i18nPh); });
     $$(".lang button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
     $("#dateText").textContent = pick(S.dateLabel) || "TBA";
+    $("#wsEyebrow").textContent = t("ws.eyebrow", WS.length, (S.program || []).length || 2);
     buildMarquee(); renderChips(); renderGrid(); renderProgram(); renderJoin(); renderLinks(); renderArchive(); tickCountdown();
   }
   $$(".lang button").forEach(b => b.addEventListener("click", () => {
@@ -287,7 +288,7 @@
     });
   }
 
-  /* ---------------- workshops: horizontal travel (pinned on wide screens) ---------------- */
+  /* ---------------- workshops ---------------- */
   const WS = (S.workshops || []).filter(w => w && w.title);
   const CATS = S.categories || {};
   let active = "", query = "";
@@ -319,13 +320,12 @@
   }
   $("#chips").addEventListener("click", e => {
     const b = e.target.closest(".chip"); if (!b) return;
-    active = b.dataset.v; renderChips(); renderGrid(); jumpToWorkshops();
+    active = b.dataset.v; renderChips(); renderGrid();
   });
   $("#q").addEventListener("input", e => { query = e.target.value.trim().toLocaleLowerCase(lang); renderGrid(); });
 
   let shown = [];
   function renderGrid() {
-    const track = $("#track");
     shown = WS.map((w, i) => ({ w, i })).filter(({ w }) => {
       const hay = [w.title, w.desc].map(pick).concat(catName(w.cat)).join(" ").toLocaleLowerCase(lang);
       return (!active || w.cat === active) && (!query || hay.includes(query));
@@ -344,52 +344,42 @@
         </button>`;
       }).join("");
     }
-    layoutHS();
+    liquidKick();
   }
 
-  /* pinned horizontal scroll, Lusion "featured work" style */
-  const hs = $("#workshops"), view = $("#hsView"), track = $("#track");
-  const wide = matchMedia("(min-width: 760px)");
-  let travel = 0, cur = 0, goal = 0, vel = 0;
-  function layoutHS() {
-    if (!wide.matches || reduced) { hs.style.height = ""; track.style.transform = ""; travel = 0; updateHUD(); return; }
-    travel = Math.max(0, track.scrollWidth - view.clientWidth);
-    hs.style.height = `${innerHeight + travel}px`;
-    onHSScroll();
+  /* liquid scroll: a droplet of scroll velocity stretches the cards, then everything settles back to still */
+  const track = $("#track"), liquidMap = $("#liquidMap");
+  let lqY = scrollY, lqV = 0, lqOn = false, lqRun = false;
+  function liquidKick() { if (!reduced && !lqRun) { lqRun = true; requestAnimationFrame(liquidStep); } }
+  function liquidClear() {
+    track.style.filter = ""; liquidMap.setAttribute("scale", "0");
+    track.querySelectorAll(".hcard").forEach(c => { c.style.transform = ""; });
+    lqOn = false;
   }
-  function onHSScroll() {
-    if (!travel) return;
-    const top = hs.getBoundingClientRect().top;
-    goal = Math.min(travel, Math.max(0, -top));
-  }
-  function updateHUD() {
-    const n = shown.length || 1;
-    const p = travel ? cur / travel : (view.scrollLeft / Math.max(1, view.scrollWidth - view.clientWidth) || 0);
-    $("#hsBar").style.transform = `scaleX(${Math.max(.02, p)})`;
-    $("#hsNum").textContent = `${String(Math.min(n, Math.round(p * (n - 1)) + 1)).padStart(2, "0")} / ${String(shown.length).padStart(2, "0")}`;
-  }
-  (function hsLoop() {
-    if (travel) {
-      const prev = cur; cur += (goal - cur) * .12; vel += ((cur - prev) - vel) * .2;
-      const skew = Math.max(-6, Math.min(6, vel * .25));
-      track.style.transform = `translate3d(${-cur}px,0,0) skewX(${-skew}deg)`;
-      // parallax inside each card
-      track.querySelectorAll(".hcard__art").forEach(svg => {
-        const b = svg.getBoundingClientRect(), mid = (b.left + b.width / 2) / innerWidth - .5;
-        svg.style.transform = `translateX(${mid * -40}px) rotate(${mid * 12}deg)`;
-      });
-      updateHUD();
+  function liquidStep() {
+    const y = scrollY, dy = y - lqY; lqY = y;
+    lqV += (Math.max(-90, Math.min(90, dy)) - lqV) * .14;
+    const a = Math.abs(lqV), k = Math.min(1, a / 55), sign = lqV < 0 ? -1 : 1;
+    if (a < .05) {
+      if (lqOn) liquidClear();
+      lqRun = false; return;
     }
-    requestAnimationFrame(hsLoop);
-  })();
-  addEventListener("scroll", onHSScroll, { passive: true });
-  addEventListener("resize", layoutHS);
-  wide.addEventListener("change", layoutHS);
-  view.addEventListener("scroll", updateHUD, { passive: true });
-  function jumpToWorkshops() {
-    if (travel) scrollTo({ top: hs.offsetTop, behavior: reduced ? "auto" : "smooth" });
-    else view.scrollTo({ left: 0 });
+    const r = track.getBoundingClientRect(), vh = innerHeight;
+    if (r.bottom > -200 && r.top < vh + 200) {
+      lqOn = true;
+      const cards = track.children, rects = [];
+      for (let i = 0; i < cards.length; i++) rects.push(cards[i].getBoundingClientRect());   // reads first
+      for (let i = 0; i < cards.length; i++) {                                               // then writes
+        const c = rects[i], f = Math.max(0, 1 - Math.abs(c.top + c.height / 2 - vh / 2) / (vh * .75));
+        const w = k * f * f;
+        cards[i].style.transform = w < .003 ? "" : `scale(${(1 + .06 * w).toFixed(4)}, ${(1 - .03 * w).toFixed(4)}) skewY(${(sign * 1.6 * w).toFixed(3)}deg)`;
+      }
+      track.style.filter = "url(#liquid)";
+      liquidMap.setAttribute("scale", (k * 22).toFixed(2));
+    } else if (lqOn) liquidClear();
+    requestAnimationFrame(liquidStep);
   }
+  if (!reduced) addEventListener("scroll", liquidKick, { passive: true });
 
   /* workshop window + playground */
   const modal = $("#modal");
@@ -425,7 +415,7 @@
     const rows = [
       Lk.email && [`mailto:${Lk.email}`, "✉", t("ask.mail"), Lk.email],
       Lk.instagram && [Lk.instagram, "◎", "Instagram", "@hisarcs"],
-      Lk.linkedin && [Lk.linkedin, "in", "LinkedIn", "HisarCS · idealab"],
+      Lk.linkedin && [Lk.linkedin, "in", "LinkedIn", "HisarCS · FabLab"],
       ["tel:+902123640000", "☏", t("ask.phone"), "+90 (212) 364 00 00"]
     ].filter(Boolean);
     $("#askLinks").innerHTML = rows.map(([href, ic, lab, val]) =>
@@ -463,10 +453,8 @@
 
   /* ---------------- join ---------------- */
   function renderJoin() {
-    if (!S.registrationUrl) return;
-    $("#joinText").textContent = t("join.open");
+    $("#joinText").textContent = t(S.registrationEndpoint ? "join.open" : "join.soon");
     $("#joinBtnText").textContent = t("join.register");
-    $("#joinBtn").href = S.registrationUrl;
   }
 
   /* ---------------- legacy ---------------- */

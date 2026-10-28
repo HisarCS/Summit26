@@ -4,10 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Quantum Leap — 13th Hisar Coding Summit</title>
-  <meta name="description" content="The official information and registration website for the 13th Hisar Coding Summit: Quantum Leap. FabLab students, to anyone who wants to learn." />
+  <meta name="description" content="The official information and registration website for the 13th Hisar Coding Summit: Quantum Leap. From FabLab students, to anyone who wants to learn." />
   <meta name="theme-color" content="#0b3f8f" />
   <meta property="og:title" content="Quantum Leap — 13th Hisar Coding Summit" />
-  <meta property="og:description" content="FabLab students. To anyone who wants to learn." />
+  <meta property="og:description" content="From FabLab students. To anyone who wants to learn." />
   <link rel="icon" href="legacy/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,7 +23,7 @@
 
   <header class="nav" id="nav">
     <a class="nav__brand" href="#top" aria-label="Hisar Coding Summit home">
-      <img src="assets/img/idealab-white.png" alt="idealab" />
+      <img src="assets/img/fablab-white.png" alt="fablab" />
       <span>CODING SUMMIT 13</span>
     </a>
     <nav class="nav__links" id="navlinks">
@@ -53,7 +53,7 @@
           <span class="row" data-scramble="QUANTUM">QUANTUM</span>
           <span class="row" data-scramble="LEAP">LEAP</span>
         </h1>
-        <p class="hero__tag reveal" data-i18n="hero.tag">FabLab students. To anyone who wants to learn</p>
+        <p class="hero__tag reveal" data-i18n="hero.tag">FROM FABLAB STUDENTS. TO ANYONE WHO WANTS TO LEARN</p>
         <a class="hero__org reveal" id="orgLink" href="#" target="_blank" rel="noopener">
           <span data-i18n="hero.org">Organised by</span> <b>FRC Team 6431 · NoktaParantez</b>
         </a>
@@ -88,7 +88,7 @@
     <!-- PARTNERS -->
     <div class="partners">
       <div class="wrap">
-        <span class="p"><img src="assets/img/idealab-white.png" alt="" />Hisar FabLab</span>
+        <span class="p"><img src="assets/img/fablab-white.png" alt="" />Hisar FabLab</span>
         <span class="p"><i class="dot" style="background:var(--red)"></i>Fab Academy</span>
         <span class="p"><i class="dot" style="background:var(--yellow)"></i>Fab Foundation</span>
         <span class="p"><i class="dot" style="background:var(--cream)"></i>MIT Edgerton Center</span>
@@ -103,7 +103,7 @@
           <span class="eyebrow" data-i18n="about.eyebrow">Coding since 2013</span>
           <h2 class="h2" data-i18n-html="about.title">A decade+ of<br><em>leaps</em></h2>
           <p class="lead" data-i18n="about.p1">Hisar Coding Summit was created to grow our students' potential through digital transformation. This year it is held for the 13th time at Hisar Schools — in English and Turkish, taught by FabLab students to anyone who wants to learn.</p>
-          <p class="lead" data-i18n="about.p2">Idealab, Hisar's FabLab, has been the heartbeat of innovation for over a decade: a maker space where creativity and collaboration turn ideas into real things.</p>
+          <p class="lead" data-i18n="about.p2">Hisar FabLab has been the heartbeat of innovation for over a decade: a maker space where creativity and collaboration turn ideas into real things.</p>
           <div class="swatches" aria-hidden="true">
             <i style="background:var(--cream)"></i><i style="background:var(--navy)"></i><i style="background:var(--blue);outline:1px solid var(--line)"></i><i style="background:var(--red)"></i><i style="background:var(--yellow)"></i>
           </div>
@@ -121,14 +121,14 @@
     <div class="marquee marquee--y" aria-hidden="true"><div class="marquee__track" id="mq2"></div></div>
 
     <!-- WORKSHOPS -->
-    <section class="hs" id="workshops">
-      <div class="hs__sticky">
-        <div class="hs__head">
+    <section class="section" id="workshops">
+      <div class="wrap">
+        <div class="ws__head reveal">
           <div>
-            <span class="eyebrow" data-i18n="ws.eyebrow">Student-led workshops</span>
-            <h2 class="h2" data-i18n-html="ws.title">Pick your <em>state</em></h2>
+            <span class="eyebrow" id="wsEyebrow">29 workshops · 2 days</span>
+            <h2 class="h2" data-i18n-html="ws.title">Student <em>workshops</em></h2>
           </div>
-          <div class="hs__tools">
+          <div class="ws__tools">
             <label class="search">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
               <input id="q" type="search" data-i18n-ph="ws.search" placeholder="Search workshops…" autocomplete="off" />
@@ -136,15 +136,14 @@
             <div class="chips" id="chips"></div>
           </div>
         </div>
-        <div class="hs__viewport" id="hsView">
-          <div class="hs__track" id="track"></div>
-        </div>
-        <div class="hs__foot">
-          <span class="hs__num" id="hsNum">01 / 29</span>
-          <div class="hs__bar"><i id="hsBar"></i></div>
-          <span class="hs__hint" data-i18n="ws.hint">scroll ↓ to travel · click a card to play</span>
-        </div>
+        <div class="ws__grid" id="track"></div>
       </div>
+      <svg class="liquid-defs" width="0" height="0" aria-hidden="true" focusable="false">
+        <filter id="liquid" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+          <feTurbulence type="fractalNoise" baseFrequency="0.006 0.014" numOctaves="1" seed="3" result="n" />
+          <feDisplacementMap id="liquidMap" in="SourceGraphic" in2="n" scale="0" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+      </svg>
     </section>
 
     <!-- PROGRAM -->
@@ -166,10 +165,13 @@
           <span class="eyebrow" style="color:var(--cream)" data-i18n="join.eyebrow">Registration</span>
           <h2 class="h2" data-i18n-html="join.title">Take the<br>leap</h2>
           <p id="joinText" data-i18n="join.soon">Registration opens soon. Follow @hisarcs to be the first to know.</p>
-          <a class="btn" id="joinBtn" href="https://www.instagram.com/hisarcs/" target="_blank" rel="noopener">
-            <span id="joinBtnText" data-i18n="join.follow">Follow @hisarcs</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
+          <div class="join__cta">
+            <a class="btn" id="joinBtn" href="register.html">
+              <span id="joinBtnText" data-i18n="join.register">Register</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="join__ig" href="https://www.instagram.com/hisarcs/" target="_blank" rel="noopener">@hisarcs</a>
+          </div>
         </div>
       </div>
     </section>
@@ -208,13 +210,13 @@
           <h4 style="margin-top:28px" data-i18n="ft.org">Organised by</h4>
           <ul>
             <li><a id="frcFoot" href="https://6431.hisarschool.k12.tr/" target="_blank" rel="noopener">FRC Team 6431 · 6431.hisarschool.k12.tr</a></li>
-            <li>Hisar FabLab idealab</li>
+            <li>Hisar FabLab</li>
           </ul>
         </div>
         <div>
           <h4 data-i18n="ft.prev">Previous summits</h4>
           <ul id="prevLinks"></ul>
-          <img src="assets/img/hisar.png" alt="Hisar Okulları" style="height:44px;width:auto;margin-top:28px;opacity:.85" />
+          <img class="hisar30" src="assets/img/hisar-30.png" alt="Hisar Okulları 30. yıl" />
         </div>
       </div>
 
@@ -224,11 +226,18 @@
         <small data-i18n="ft.legacy">Looking for last year's site?</small>
         <a class="legacy__btn" id="legacyBtn" href="legacy/">
           <span class="badge">LEGACY</span>
-          <img src="assets/img/idealab-white.png" alt="" />
+          <img src="assets/img/fablab-white.png" alt="" />
           <span>Coding Summit 11</span>
         </a>
+        <div class="logos" id="logoRow">
+          <img src="assets/img/partners/hisar-fablab.png" alt="Hisar FabLab" />
+          <img src="assets/img/partners/fab-academy.png" alt="Fab Academy" />
+          <img src="assets/img/partners/fab-foundation.png" alt="Fab Foundation" />
+          <img src="assets/img/partners/mit-edgerton.png" alt="MIT Edgerton Center" />
+          <img class="chip" src="assets/img/partners/first.png" alt="FRC Team 6431 NoktaParantez" />
+        </div>
       </div>
-      <p class="copy">© <span id="yr"></span> HisarCS · Hisar FabLab idealab</p>
+      <p class="copy">© <span id="yr"></span> HisarCS · Hisar FabLab</p>
     </div>
   </footer>
 

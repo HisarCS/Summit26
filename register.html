@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Register — Quantum Leap · 13th Hisar Coding Summit</title>
+  <meta name="description" content="Register for the 13th Hisar Coding Summit: Quantum Leap, 18–19 December 2026." />
+  <meta name="theme-color" content="#0b3f8f" />
+  <link rel="icon" href="legacy/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;500&family=Montserrat:wght@300;400;500;600;700&family=Orbitron:wght@500;700;900&family=Plus+Jakarta+Sans:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/register.css?v=2" />
+</head>
+<body class="reg">
+  <div class="reg__bg" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav is-solid" id="nav">
+    <a class="nav__brand" href="index.html" aria-label="Hisar Coding Summit home">
+      <img src="assets/img/fablab-white.png" alt="fablab" />
+      <span>CODING SUMMIT 13</span>
+    </a>
+    <div class="nav__right">
+      <a class="reg__back" href="index.html"><span aria-hidden="true">←</span> <span data-i18n="reg.back">Back to site</span></a>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="tr" aria-pressed="false">TR</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="reg__main">
+    <div class="reg__wrap">
+      <div class="reg__intro">
+        <span class="eyebrow" data-i18n="reg.eyebrow">Registration</span>
+        <h1 class="h2" data-i18n-html="reg.title">Take the <em>leap</em></h1>
+        <p class="lead" data-i18n="reg.lead">Tell us who you are and pick the workshops you want to join on 18–19 December 2026. Seats in each workshop are limited.</p>
+      </div>
+
+      <div class="reg__soon" id="soon" hidden role="status">
+        <b data-i18n="reg.soonTitle">Registration opens soon</b>
+        <span data-i18n="reg.soonText">The form is ready, but we are not taking sign-ups yet. Follow @hisarcs to be the first to know.</span>
+      </div>
+
+      <form class="reg__form" id="form" novalidate autocomplete="on">
+        <div class="reg__grid">
+          <div class="f">
+            <label for="firstName"><span data-i18n="reg.first">First name</span> <i>*</i></label>
+            <input id="firstName" name="firstName" type="text" autocomplete="given-name" maxlength="80" required />
+            <p class="err" data-for="firstName" role="alert"></p>
+          </div>
+          <div class="f">
+            <label for="lastName"><span data-i18n="reg.last">Last name</span> <i>*</i></label>
+            <input id="lastName" name="lastName" type="text" autocomplete="family-name" maxlength="80" required />
+            <p class="err" data-for="lastName" role="alert"></p>
+          </div>
+          <div class="f">
+            <label for="email"><span data-i18n="reg.email">Email</span> <i>*</i></label>
+            <input id="email" name="email" type="email" inputmode="email" autocomplete="email" maxlength="120" placeholder="name@example.com" required />
+            <p class="err" data-for="email" role="alert"></p>
+          </div>
+          <div class="f">
+            <label for="phone"><span data-i18n="reg.phone">Phone</span> <i>*</i></label>
+            <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="24" placeholder="05xx xxx xx xx" required />
+            <small data-i18n="reg.phoneHint">Mobile number, e.g. 0532 123 45 67 or +90 532 123 45 67</small>
+            <p class="err" data-for="phone" role="alert"></p>
+          </div>
+          <div class="f">
+            <label for="school" data-i18n="reg.school">School</label>
+            <input id="school" name="school" type="text" autocomplete="organization" maxlength="120" />
+          </div>
+          <div class="f">
+            <label for="grade" data-i18n="reg.grade">Grade</label>
+            <select id="grade" name="grade"></select>
+          </div>
+        </div>
+
+        <fieldset class="f reg__ws" id="wsField">
+          <legend><span data-i18n="reg.workshops">Workshops</span> <i>*</i></legend>
+          <div class="reg__wstools">
+            <label class="search">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+              <input id="wsq" type="search" data-i18n-ph="reg.wsSearch" placeholder="Search workshops…" autocomplete="off" aria-label="Search workshops" />
+            </label>
+            <span class="reg__picked" id="picked" aria-live="polite"></span>
+          </div>
+          <div class="reg__list" id="wsList"></div>
+          <p class="err" data-for="workshops" role="alert"></p>
+        </fieldset>
+
+        <div class="f">
+          <label for="notes" data-i18n="reg.notes">Notes</label>
+          <textarea id="notes" name="notes" rows="3" maxlength="600" data-i18n-ph="reg.notesPh" placeholder="Anything we should know? (optional)"></textarea>
+        </div>
+
+        <div class="f reg__consent">
+          <label class="check">
+            <input id="consent" name="consent" type="checkbox" />
+            <span><span data-i18n="reg.consent">I consent to my personal data being processed for Hisar Coding Summit registration.</span> <i>*</i></span>
+          </label>
+          <p class="err" data-for="consent" role="alert"></p>
+        </div>
+
+        <div class="hp" aria-hidden="true"><label>Website <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" /></label></div>
+
+        <div class="reg__error" id="fail" hidden role="alert">
+          <b data-i18n="reg.failTitle">We could not send your registration</b>
+          <span id="failMsg"></span>
+        </div>
+
+        <div class="reg__actions">
+          <button class="btn" id="submit" type="submit">
+            <span id="submitText" data-i18n="reg.submit">Register</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <span class="reg__req" data-i18n="reg.required">* required</span>
+        </div>
+      </form>
+
+      <section class="reg__done" id="done" hidden aria-live="polite">
+        <span class="eyebrow" style="color:var(--yellow)" data-i18n="reg.doneEyebrow">Done</span>
+        <h2 class="h2" data-i18n-html="reg.doneTitle">You're <em>registered</em></h2>
+        <p class="lead" id="doneText"></p>
+        <ul class="reg__sum" id="doneList"></ul>
+        <a class="btn btn--ghost" href="index.html"><span data-i18n="reg.back">Back to site</span></a>
+      </section>
+    </div>
+  </main>
+
+  <footer class="reg__foot">
+    <span>© <span id="yr"></span> HisarCS · Hisar FabLab</span>
+    <a href="index.html#contact" data-i18n="reg.help">Questions? Contact us</a>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/register.js"></script>
+</body>
+</html>
