@@ -181,3 +181,18 @@ const WORKSHOPS = [
   {"id": "creative-coding-art-meets-algorithms", "name": "Creative Coding: Sanat ve Algoritmalar"},
   {"id": "generative-design-code-to-create", "name": "Generative Design: Kodla Üret"}
 ];
+
+// Deletes test registrations (e-mails ending in @example.com) from Kayıtlar and Katılımlar, then recounts Dersler.
+function clearTestRows() {
+  const ss = SpreadsheetApp.openById(SHEET_ID);
+  [[TAB_REG, 5], [TAB_JOIN, 4]].forEach(([name, col]) => {
+    const sh = ss.getSheetByName(name);
+    if (!sh || sh.getLastRow() < 2) return;
+    const vals = sh.getRange(2, col, sh.getLastRow() - 1, 1).getValues();
+    for (let i = vals.length - 1; i >= 0; i--) if (String(vals[i][0]).endsWith("@example.com")) sh.deleteRow(i + 2);
+  });
+  refresh();
+}
+
+// Names the sheet file (UI rename did not stick).
+function renameSheet() { SpreadsheetApp.openById(SHEET_ID).rename("Hisar Coding Summit 13 — Kayıtlar"); }
