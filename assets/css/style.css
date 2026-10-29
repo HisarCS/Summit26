@@ -456,3 +456,11 @@ button { font: inherit; color: inherit; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* partner logo strip under the hero */
+.partners .pl { height: clamp(26px, 3vw, 40px); width: auto; opacity: .92; flex: none; }
+.partners .pl--sm { height: clamp(18px, 2vw, 26px); }
+.partners .pl--chip { height: clamp(30px, 3.4vw, 44px); background: #fff; padding: 4px 7px; border-radius: 9px; opacity: 1; }
+.partners .pl-link { display: inline-flex; transition: transform .2s; }
+.partners .pl-link:hover { transform: translateY(-2px); }
+@media (max-width: 600px) { .partners .wrap { gap: 16px 22px; } }
