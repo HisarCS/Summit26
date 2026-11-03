@@ -453,8 +453,13 @@
 
   /* ---------------- join ---------------- */
   function renderJoin() {
-    $("#joinText").textContent = t(S.registrationEndpoint ? "join.open" : "join.soon");
-    $("#joinBtnText").textContent = t("join.register");
+    const open = !!(S.registrationOpen && S.registrationEndpoint);
+    $("#joinText").textContent = t(open ? "join.open" : "join.soon");
+    $("#joinBtnText").textContent = t(open ? "join.register" : "join.follow");
+    const btn = $("#joinBtn");
+    btn.href = open ? "register.html" : ((S.links && S.links.instagram) || "https://www.instagram.com/hisarcs/");
+    if (open) { btn.removeAttribute("target"); btn.removeAttribute("rel"); } else { btn.target = "_blank"; btn.rel = "noopener"; }
+    $(".join__ig").hidden = !open;
   }
 
   /* ---------------- legacy ---------------- */

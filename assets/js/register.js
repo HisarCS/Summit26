@@ -2,6 +2,8 @@
   "use strict";
 
   const S = (typeof window !== "undefined" && window.SUMMIT) || { workshops: [], categories: {} };
+  // Registration is switched off in data.js: send visitors back to the main site (form kept for later).
+  if (!S.registrationOpen) { document.documentElement.style.display = "none"; location.replace("index.html#join"); return; }
   const WS = (S.workshops || []).filter(w => w && w.title && w.id);
   const CATS = S.categories || {};
 

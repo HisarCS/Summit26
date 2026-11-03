@@ -9,6 +9,9 @@ window.SUMMIT = {
   dateLabel: { en: "18–19 DEC 2026", tr: "18–19 ARALIK 2026" },
   registrationUrl: "",
   // Google Apps Script web-app URL that receives the registration form (POST, text/plain JSON). Empty = "opens soon".
+  // Registration switch: false hides the Register button and sends register.html back to the home page.
+  // The form, the Apps Script endpoint and the Google Sheet stay as they are. Set to true to open sign-ups.
+  registrationOpen: false,
   registrationEndpoint: "https://script.google.com/macros/s/AKfycbxKrWLGIs22U5VpLgRlXYqRsiao5HuSTrU_-JAiUEo-iiqvwEKa8dMmhVyl6s-2Euqp7g/exec",
 
   links: {
