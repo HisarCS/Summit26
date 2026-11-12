@@ -194,7 +194,9 @@ button.room:hover { border-color: var(--yellow); }
 .hcard .tags { margin: 10px 0 0; }
 .wmeta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 10px 0 18px; }
 .wmeta__k { font-family: var(--f-mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--cream-dim); }
-.apply__dev { margin-top: 14px; color: var(--cream-dim); font-size: 14px; }
+.apply__dev { display: flex; align-items: center; gap: 14px; margin: 26px 0 6px; padding: 16px 20px; border: 2px solid var(--yellow); border-radius: 14px; background: rgba(239, 194, 50, .14); color: var(--cream); font-size: clamp(17px, 2.2vw, 21px); font-weight: 800; line-height: 1.35; }
+.apply__dev[hidden] { display: none; }
+.apply__dev::before { content: ""; flex: none; width: 34px; height: 34px; background: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23efc232' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='4' y='5' width='16' height='11' rx='1.5'/%3E%3Cpath d='M2 19h20'/%3E%3C/svg%3E"); }
 .brownie { margin-top: 36px; padding: clamp(20px, 4vw, 34px); border-radius: 18px; border: 2px solid var(--yellow); background: linear-gradient(135deg, rgba(197, 42, 67, .35), rgba(6, 34, 86, .6)); }
 .brownie__tag { font-family: var(--f-mono); font-size: 12px; letter-spacing: .1em; color: var(--yellow); }
 .brownie h3 { font-family: var(--f-display); font-size: clamp(28px, 5vw, 44px); margin: 6px 0 10px; }

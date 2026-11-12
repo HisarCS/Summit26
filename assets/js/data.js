@@ -1,8 +1,8 @@
 /* Content for the 13th Coding Summit site.
    Workshop names, levels, the 19 Dec flow and the Saturday session grid come from Mehmet Bener's update
    (WhatsApp, 11 Nov 2026): rows marked red in the sheet (FabArt, Generative Design, Julia) are removed.
-   Seven workshops appear only in the session grid, not in the names sheet; their levels are not known yet
-   (levels: [] shows "level to be announced").
+   Seven workshops appear only in the session grid, not in the names sheet; their levels came later from
+   Mehmet (12 Nov; "Ortaokul" = grades 5-6 + 7-8). levels: [] would show "level to be announced".
    Instructor names are left out on purpose.
    Descriptions: `official` ones come from the summit's own texts; the rest are drafts to be replaced as the
    official texts and photos arrive. `pg` picks the interactive playground shown in the workshop window.
@@ -159,32 +159,32 @@ window.SUMMIT = {
       desc: { tr: "Kurgu, renk ve ses: çektiğin görüntülerden kısa ve etkili bir video çıkar.",
               en: "Cutting, colour and sound: turn your footage into a short video that lands." } },
 
-    /* In the 19 Dec session grid but not in the names sheet — levels not known yet. */
-    { id: "quantum-world-think-beyond-bits", cat: "code", pg: "qubit", levels: [], device: true,
+    /* In the 19 Dec session grid but not in the names sheet — levels sent separately on 12 Nov. */
+    { id: "quantum-world-think-beyond-bits", cat: "code", pg: "qubit", levels: ["lise", "lise-adv"], device: true,
       title: { tr: "Kuantum Dünyası: Bitlerin Ötesini Düşün", en: "Quantum World: Think Beyond Bits" },
       desc: { tr: "Bitlerin ötesine geç: süperpozisyon ve dolanıklık gibi kuantum dünyasının tuhaf kurallarını deneylerle keşfet.",
               en: "Go beyond bits: explore the strange rules of the quantum world, like superposition and entanglement, through experiments." } },
-    { id: "design-your-own-sticker-graphic-design-and-stick", cat: "design", pg: "sticker", levels: [], device: true,
+    { id: "design-your-own-sticker-graphic-design-and-stick", cat: "design", pg: "sticker", levels: ["ilkokul", "5-6", "7-8", "lise"], device: true,
       title: { tr: "Sticker Fabrikası: Kendi Sticker'ını Tasarla!", en: "Sticker Factory: Design Your Own!" },
       desc: { tr: "Grafik tasarımın temelleriyle kendi sticker'ını çiz, kesim hattını hazırla ve bas.",
               en: "Learn graphic design basics, draw your own sticker, prepare its cut line and print it." } },
-    { id: "laser-magic-cut-build-create", cat: "fab", pg: "layers", levels: [], device: true,
+    { id: "laser-magic-cut-build-create", cat: "fab", pg: "layers", levels: ["5-6", "7-8", "lise"], device: true,
       title: { tr: "Lazer Büyüsü: Kes, İnşa Et, Yarat", en: "Laser Magic: Cut, Build, Create" },
       desc: { tr: "Tasarımını lazer kesime hazırla, kes ve parçaları birleştirerek kendi objeni yap.",
               en: "Prepare your design for the laser cutter, cut it and assemble the parts into your own object." } },
-    { id: "piwars-challenge-robot-design", cat: "robotics", pg: "robot", levels: [], device: true,
+    { id: "piwars-challenge-robot-design", cat: "robotics", pg: "robot", levels: ["lise"], device: true,
       title: { tr: "PiWars: İnşa Et, Kodla, Yarış!", en: "PiWars: Build, Code, Compete!" },
       desc: { tr: "Raspberry Pi tabanlı robotlarla PiWars görevlerine hazırlan: tasarım, sensörler ve parkur stratejisi.",
               en: "Get ready for PiWars challenges with Raspberry Pi robots: design, sensors and course strategy." } },
-    { id: "cyber-detectives-osint-investigation", cat: "code", pg: "cyber", levels: [], device: true,
+    { id: "cyber-detectives-osint-investigation", cat: "code", pg: "cyber", levels: ["lise", "lise-adv"], device: true,
       title: { tr: "Siber Dedektifler: Bir OSINT Soruşturması", en: "Cyber Detectives: An OSINT Investigation" },
       desc: { tr: "Açık kaynaklardan ipucu topla, izleri birleştir ve bir siber vakayı çöz; bu sırada kendi dijital izini korumayı öğren.",
               en: "Gather clues from open sources, connect the traces and crack a cyber case — and learn to protect your own digital footprint along the way." } },
-    { id: "vinyl-cutting", cat: "fab", pg: "sticker", levels: [], device: true,
+    { id: "vinyl-cutting", cat: "fab", pg: "sticker", levels: ["ilkokul", "5-6", "7-8", "lise"], device: true,
       title: { tr: "Cricut ile Kişisel Tasarımlar", en: "Custom Creations with Cricut" },
       desc: { tr: "Vektör çizimini Cricut kesim makinesine hazırla, kes ve yüzeye uygula.",
               en: "Prepare a vector drawing for the Cricut cutter, cut it and apply it to a surface." } },
-    { id: "haas-cnc", cat: "fab", pg: "cnc", levels: [], device: true,
+    { id: "haas-cnc", cat: "fab", pg: "cnc", levels: ["lise-adv"], device: true,
       title: { tr: "Dijitalden Metale: Haas CNC Atölyesi", en: "From Digital to Metal: Haas CNC Workshop" },
       desc: { tr: "Endüstriyel bir Haas CNC tezgahının nasıl çalıştığını öğren: takım yolları, G-kodu ve güvenli üretim.",
               en: "See how an industrial Haas CNC machine works: toolpaths, G-code and safe machining." } }
