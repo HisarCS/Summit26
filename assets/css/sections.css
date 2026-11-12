@@ -173,3 +173,39 @@ a.acard:focus-visible { outline: 2px solid var(--yellow); outline-offset: 4px; }
 .acard__note { font-size: 12px; line-height: 1.4; color: var(--cream-dim); font-style: italic; }
 .acard--source .acard__badge { background: var(--red); color: var(--cream); }
 .acard--source { border-color: color-mix(in srgb, var(--red) 55%, transparent); }
+
+/* ---- apply & sessions ---- */
+.apply { padding-top: clamp(56px, 8vw, 100px); }
+.apply__lead { max-width: 60ch; color: var(--cream-dim); margin: 14px 0 22px; }
+.formrow { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 16px; }
+.formnote { font-size: 14px; color: var(--yellow); }
+.sess__tabs { display: flex; max-width: 100%; border-radius: 22px; }
+.sess__tabs button { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 10px 8px; border-radius: 16px; }
+.sess__tabs small { font-weight: 400; font-size: 12px; opacity: .85; }
+.sess__rooms { display: grid; gap: 8px; margin-top: 18px; }
+.room { display: grid; grid-template-columns: 220px 1fr auto; align-items: center; gap: 8px 18px; width: 100%; text-align: left; padding: 14px 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--glass); color: var(--cream); font: inherit; cursor: pointer; min-width: 0; }
+button.room:hover { border-color: var(--yellow); }
+.room__no { font-family: var(--f-mono); font-size: 13px; letter-spacing: .06em; color: var(--yellow); overflow-wrap: anywhere; }
+.room__t { font-weight: 700; overflow-wrap: anywhere; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.lvl { display: inline-block; padding: 3px 9px; border-radius: 99px; border: 1px solid var(--line); font-size: 11px; font-weight: 700; letter-spacing: .04em; color: var(--cream); }
+.lvl--tba { color: var(--cream-dim); border-style: dashed; font-weight: 400; }
+.lvl--dev { color: var(--yellow); border-color: rgba(239, 194, 50, .45); }
+.hcard .tags { margin: 10px 0 0; }
+.wmeta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 10px 0 18px; }
+.wmeta__k { font-family: var(--f-mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--cream-dim); }
+.apply__dev { margin-top: 14px; color: var(--cream-dim); font-size: 14px; }
+.brownie { margin-top: 36px; padding: clamp(20px, 4vw, 34px); border-radius: 18px; border: 2px solid var(--yellow); background: linear-gradient(135deg, rgba(197, 42, 67, .35), rgba(6, 34, 86, .6)); }
+.brownie__tag { font-family: var(--f-mono); font-size: 12px; letter-spacing: .1em; color: var(--yellow); }
+.brownie h3 { font-family: var(--f-display); font-size: clamp(28px, 5vw, 44px); margin: 6px 0 10px; }
+.brownie p { max-width: 58ch; margin-bottom: 18px; }
+.slot--break { padding: 8px 0; opacity: .6; }
+.slot--break b { font-size: 14px; font-weight: 400; }
+.slot--event { background: rgba(239, 194, 50, .12); border-left: 3px solid var(--yellow); padding-left: 14px; }
+.slot--event b { color: var(--yellow); }
+.slot__link { display: inline-block; margin-top: 6px; font-size: 13px; font-weight: 700; color: var(--yellow); text-decoration: none; }
+.slot__link:hover { text-decoration: underline; }
+.join__cta .formnote { flex-basis: 100%; text-align: center; }
+@media (max-width: 700px) {
+  .room { grid-template-columns: 1fr; }
+}

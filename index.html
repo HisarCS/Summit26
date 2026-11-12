@@ -12,8 +12,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;500&family=Montserrat:wght@300;400;500;600;700&family=Orbitron:wght@500;700;900&family=Plus+Jakarta+Sans:wght@700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/style.css?v=1103a" />
-  <link rel="stylesheet" href="assets/css/sections.css?v=1103a" />
+  <link rel="stylesheet" href="assets/css/style.css?v=1112a" />
+  <link rel="stylesheet" href="assets/css/sections.css?v=1112a" />
 </head>
 <body>
   <canvas id="smoke" aria-hidden="true"></canvas>
@@ -27,6 +27,7 @@
       <span>CODING SUMMIT 13</span>
     </a>
     <nav class="nav__links" id="navlinks">
+      <a href="#apply" data-i18n="nav.apply">Apply</a>
       <a href="#about" data-i18n="nav.about">About</a>
       <a href="#workshops" data-i18n="nav.workshops">Workshops</a>
       <a href="#program" data-i18n="nav.program">Program</a>
@@ -53,7 +54,7 @@
           <span class="row" data-scramble="QUANTUM">QUANTUM</span>
           <span class="row" data-scramble="LEAP">LEAP</span>
         </h1>
-        <p class="hero__tag reveal" data-i18n="hero.tag">FROM FABLAB STUDENTS. TO ANYONE WHO WANTS TO LEARN</p>
+        <p class="hero__tag reveal" data-i18n="hero.tag">FROM FABLAB STUDENTS. TO ANYONE WHO WANTS TO LEARN.</p>
         <a class="hero__org reveal" id="orgLink" href="#" target="_blank" rel="noopener">
           <span data-i18n="hero.org">Organised by</span> <b>FRC Team 6431 · NoktaParantez</b>
         </a>
@@ -81,6 +82,29 @@
           <a class="btn" href="#workshops"><span data-i18n="hero.cta1">Explore workshops</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           <a class="btn btn--ghost" href="#join"><span data-i18n="hero.cta2">Join the summit</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- APPLY -->
+    <section class="section apply" id="apply">
+      <div class="wrap">
+        <div class="reveal">
+          <span class="eyebrow" data-i18n="ap.eyebrow">Apply</span>
+          <h2 class="h2" data-i18n-html="ap.title">Apply &amp; <em>Sessions</em></h2>
+          <p class="apply__lead" data-i18n="ap.lead"></p>
+          <div class="formrow"><a class="btn" data-form="apply" href="#apply"><span data-i18n="ap.btn">Application form</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><span class="formnote" role="status" hidden></span></div>
+        </div>
+        <div class="tabs sess__tabs reveal" id="sessTabs" role="tablist"></div>
+        <div class="sess__rooms reveal" id="sessRooms"></div>
+        <p class="apply__dev" id="devNote" hidden></p>
+        <div class="brownie reveal">
+          <span class="brownie__tag">19 · 12 · 17:10–17:40</span>
+          <h3>Brownie Wars</h3>
+          <p data-i18n="bw.text"></p>
+          <div class="formrow"><a class="btn" data-form="brownie" href="#apply"><span data-i18n="bw.btn">Brownie Wars form</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><span class="formnote" role="status" hidden></span></div>
         </div>
       </div>
     </section>
@@ -170,6 +194,7 @@
               <span id="joinBtnText" data-i18n="join.follow">Follow @hisarcs</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
+            <a class="btn btn--ghost" data-form="apply" href="#apply"><span data-i18n="ap.btn">Application form</span></a><span class="formnote" role="status" hidden></span>
             <a class="join__ig" href="https://www.instagram.com/hisarcs/" target="_blank" rel="noopener">@hisarcs</a>
           </div>
         </div>
@@ -248,6 +273,7 @@
       <span class="card__no" id="mNo"></span>
       <h3 id="mTitle"></h3>
       <p id="mDesc"></p>
+      <div class="wmeta" id="mMeta"></div>
       <div class="pg">
         <div class="pg__label"><span data-i18n="pg.label">Playground</span><i></i></div>
         <div class="pg__body" id="mPg"></div>
@@ -257,8 +283,8 @@
 
   <div class="rewind" id="rewind" aria-hidden="true"><span>◂◂ REWINDING TO CODING SUMMIT 11</span></div>
 
-  <script src="assets/js/data.js?v=1103a"></script>
-  <script src="assets/js/playgrounds.js?v=1103a"></script>
-  <script src="assets/js/main.js?v=1103a"></script>
+  <script src="assets/js/data.js?v=1112a"></script>
+  <script src="assets/js/playgrounds.js?v=1112a"></script>
+  <script src="assets/js/main.js?v=1112a"></script>
 </body>
 </html>

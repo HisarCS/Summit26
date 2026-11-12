@@ -13,8 +13,12 @@
       "hero.org": "Organised by", "ws.play": "Open playground",
       "ask.eyebrow": "Contact", "ask.title": "Got a <em>question?</em>", "ask.text": "Write to us about workshops, registration or anything else — we're happy to help.",
       "ask.mail": "Email", "ask.phone": "Phone", "ft.org": "Organised by", "ft.prev": "Previous summits", "pg.label": "Playground",
-      "nav.about": "About", "nav.workshops": "Workshops", "nav.program": "Program", "nav.join": "Join", "nav.archive": "Archive", "ar.eyebrow": "Past summits", "ar.title": "Twelve <em>leaps</em> so far", "ar.site": "SITE", "ar.wayback": "ARCHIVE", "ar.source": "SOURCE", "ar.missing": "Not online yet", "ar.ed": "Summit", "nav.contact": "Contact",
-      "hero.edition": "13th", "hero.tag": "FROM FABLAB STUDENTS. TO ANYONE WHO WANTS TO LEARN",
+      "nav.apply": "Apply", "nav.about": "About", "nav.workshops": "Workshops", "nav.program": "Program", "nav.join": "Join", "nav.archive": "Archive", "ar.eyebrow": "Past summits", "ar.title": "Twelve <em>leaps</em> so far", "ar.site": "SITE", "ar.wayback": "ARCHIVE", "ar.source": "SOURCE", "ar.missing": "Not online yet", "ar.ed": "Summit", "nav.contact": "Contact",
+      "ap.eyebrow": "Apply", "ap.title": "Apply & <em>Sessions</em>", "ap.lead": "Saturday 19 December workshops run in three sessions. See the sessions and rooms below, then pick yours in the application form.",
+      "ap.btn": "Application form", "ap.soon": "The form link will be added in 1–2 days.", "ap.dev": "Every workshop needs a laptop or tablet.",
+      "ap.room": "Room", "ap.open": "Open workshop", "ap.seeSessions": "See sessions", "lv.tba": "Level TBA", "dev.tag": "Laptop / tablet",
+      "bw.text": "Brownie Wars comes to Coding Summit! 19 December, 17:10–17:40, on stage before the closing. Fill in the form to take part.", "bw.btn": "Brownie Wars form",
+      "hero.edition": "13th", "hero.tag": "FROM FABLAB STUDENTS. TO ANYONE WHO WANTS TO LEARN.",
       "hero.hint": "move · click to collapse the wave", "hero.date": "Date",
       "hero.cta1": "Explore workshops", "hero.cta2": "Join the summit",
       "about.eyebrow": "Coding since 2013", "about.title": "A decade+ of<br><em>leaps</em>",
@@ -44,7 +48,11 @@
       "hero.org": "Düzenleyen", "ws.play": "Playground'u aç",
       "ask.eyebrow": "İletişim", "ask.title": "Aklında <em>soru mu var?</em>", "ask.text": "Atölyeler, kayıt ya da aklına takılan her şey için bize yaz, seve seve yardımcı oluruz.",
       "ask.mail": "E-posta", "ask.phone": "Telefon", "ft.org": "Düzenleyen", "ft.prev": "Önceki summitler", "pg.label": "Playground",
-      "nav.about": "Hakkında", "nav.workshops": "Atölyeler", "nav.program": "Program", "nav.join": "Katıl", "nav.archive": "Arşiv", "ar.eyebrow": "Önceki summitler", "ar.title": "Bugüne kadar 12 <em>sıçrama</em>", "ar.site": "SİTE", "ar.wayback": "ARŞİV", "ar.source": "KAYNAK", "ar.missing": "Henüz çevrimiçi değil", "ar.ed": "Summit", "nav.contact": "İletişim",
+      "nav.apply": "Başvuru", "nav.about": "Hakkında", "nav.workshops": "Atölyeler", "nav.program": "Program", "nav.join": "Katıl", "nav.archive": "Arşiv", "ar.eyebrow": "Önceki summitler", "ar.title": "Bugüne kadar 12 <em>sıçrama</em>", "ar.site": "SİTE", "ar.wayback": "ARŞİV", "ar.source": "KAYNAK", "ar.missing": "Henüz çevrimiçi değil", "ar.ed": "Summit", "nav.contact": "İletişim",
+      "ap.eyebrow": "Başvuru", "ap.title": "Başvuru & <em>Seanslar</em>", "ap.lead": "19 Aralık Cumartesi atölyeleri üç seansta. Seansları ve sınıfları aşağıda gör, seçimini başvuru formunda yap.",
+      "ap.btn": "Başvuru formu", "ap.soon": "Form linki 1–2 gün içinde eklenecek.", "ap.dev": "Tüm atölyeler için dizüstü bilgisayar veya tablet gereklidir.",
+      "ap.room": "Sınıf", "ap.open": "Atölyeyi aç", "ap.seeSessions": "Seansları gör", "lv.tba": "Seviye yakında", "dev.tag": "Dizüstü / tablet",
+      "bw.text": "Brownie Wars Coding Summit'te! 19 Aralık 17:10–17:40, kapanıştan önce sahnede. Katılmak için formu doldur.", "bw.btn": "Brownie Wars formu",
       "hero.edition": "13.", "hero.tag": "FABLAB ÖĞRENCİLERİNDEN. ÖĞRENMEK İSTEYEN HERKESE.",
       "hero.hint": "fareni gezdir · dalgayı çökertmek için tıkla", "hero.date": "Tarih",
       "hero.cta1": "Atölyeleri keşfet", "hero.cta2": "Summit'e katıl",
@@ -85,7 +93,7 @@
     $$(".lang button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
     $("#dateText").textContent = pick(S.dateLabel) || "TBA";
     $("#wsEyebrow").textContent = t("ws.eyebrow", WS.length, (S.program || []).length || 2);
-    buildMarquee(); renderChips(); renderGrid(); renderProgram(); renderJoin(); renderLinks(); renderArchive(); tickCountdown();
+    buildMarquee(); renderChips(); renderGrid(); renderSessions(); renderProgram(); renderJoin(); renderLinks(); renderArchive(); tickCountdown();
   }
   $$(".lang button").forEach(b => b.addEventListener("click", () => {
     lang = b.dataset.lang;
@@ -324,10 +332,15 @@
   });
   $("#q").addEventListener("input", e => { query = e.target.value.trim().toLocaleLowerCase(lang); renderGrid(); });
 
+  const lvName = c => pick((S.levels || {})[c]) || c;
+  const levelChips = w => (w.levels && w.levels.length)
+    ? w.levels.map(c => `<span class="lvl">${esc(lvName(c))}</span>`).join("")
+    : `<span class="lvl lvl--tba">${t("lv.tba")}</span>`;
+  const deviceTag = w => w.device ? `<span class="lvl lvl--dev">${t("dev.tag")}</span>` : "";
   let shown = [];
   function renderGrid() {
     shown = WS.map((w, i) => ({ w, i })).filter(({ w }) => {
-      const hay = [w.title, w.desc].map(pick).concat(catName(w.cat)).join(" ").toLocaleLowerCase(lang);
+      const hay = [w.title, w.desc].map(pick).concat(catName(w.cat), (w.levels || []).map(lvName)).join(" ").toLocaleLowerCase(lang);
       return (!active || w.cat === active) && (!query || hay.includes(query));
     });
     if (!shown.length) {
@@ -340,6 +353,7 @@
           <span class="hcard__visual">${art(i, col)}</span>
           <h3>${esc(pick(w.title))}</h3>
           <p>${esc(pick(w.desc))}</p>
+          <span class="tags">${levelChips(w)}${deviceTag(w)}</span>
           <span class="hcard__cta">${t("ws.play")} <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </button>`;
       }).join("");
@@ -384,19 +398,23 @@
   /* workshop window + playground */
   const modal = $("#modal");
   let lastFocus = null, killPg = null;
-  track.addEventListener("click", e => {
-    const c = e.target.closest(".hcard[data-i]"); if (!c) return;
-    const i = +c.dataset.i, w = WS[i];
-    lastFocus = c;
+  function openWorkshop(i, from) {
+    const w = WS[i]; if (!w) return;
+    lastFocus = from || null;
     $("#mNo").textContent = `${String(i + 1).padStart(2, "0")} · ${catName(w.cat)}`;
     $("#mTitle").textContent = pick(w.title);
     $("#mDesc").textContent = pick(w.desc);
+    $("#mMeta").innerHTML = `<span class="wmeta__k">${t("meta.level")}</span><span class="tags">${levelChips(w)}${deviceTag(w)}</span>`;
     const body = $("#mPg"); body.innerHTML = "";
     const make = (window.PLAYGROUNDS || {})[w.pg];
     modal.classList.add("is-open"); modal.setAttribute("aria-hidden", "false");
     document.documentElement.classList.add("no-scroll");
     killPg = make ? make(body, (en, tr) => lang === "tr" ? tr : en) : null;
     $(".modal__close", modal).focus();
+  }
+  track.addEventListener("click", e => {
+    const c = e.target.closest(".hcard[data-i]"); if (!c) return;
+    openWorkshop(+c.dataset.i, c);
   });
   const closeModal = () => {
     modal.classList.remove("is-open"); modal.setAttribute("aria-hidden", "true");
@@ -439,6 +457,38 @@
     }).join("");
   }
 
+  /* ---------------- apply: forms + sessions ---------------- */
+  const formUrl = k => (k === "brownie" ? S.brownieFormUrl : S.applyFormUrl) || "";
+  function renderForms() {
+    $$("[data-form]").forEach(a => {
+      const u = formUrl(a.dataset.form);
+      if (u) { a.href = u; a.target = "_blank"; a.rel = "noopener"; }
+      else { a.href = "#apply"; a.removeAttribute("target"); a.removeAttribute("rel"); }
+    });
+  }
+  document.addEventListener("click", e => {
+    const a = e.target.closest("[data-form]"); if (!a || formUrl(a.dataset.form)) return;
+    e.preventDefault();
+    const note = a.parentElement.querySelector(".formnote");
+    if (note) { note.textContent = t("ap.soon"); note.hidden = false; }
+  });
+  let sess = 0;
+  function renderSessions() {
+    renderForms();
+    const SS = S.sessions || [];
+    $("#sessTabs").innerHTML = SS.map((x, i) => `<button type="button" role="tab" aria-selected="${i === sess}" data-s="${i}"><b>${esc(pick(x.label))}</b><small>${esc(x.time)}</small></button>`).join("");
+    const cur = SS[sess];
+    $("#sessRooms").innerHTML = cur ? cur.rooms.map(([room, id]) => {
+      const wi = WS.findIndex(w => w.id === id), w = WS[wi];
+      if (!w) return `<div class="room"><span class="room__no">${esc(room)}</span><span class="room__t">${esc(id)}</span></div>`;
+      return `<button type="button" class="room" data-w="${wi}"><span class="room__no">${esc(room)}</span><span class="room__t">${esc(pick(w.title))}</span><span class="tags">${levelChips(w)}</span></button>`;
+    }).join("") : "";
+    const dn = $("#devNote"), all = WS.length && WS.every(w => w.device);
+    dn.hidden = !all; if (all) dn.textContent = t("ap.dev");
+  }
+  $("#sessTabs").addEventListener("click", e => { const b = e.target.closest("button[data-s]"); if (b) { sess = +b.dataset.s; renderSessions(); } });
+  $("#sessRooms").addEventListener("click", e => { const b = e.target.closest("[data-w]"); if (b) openWorkshop(+b.dataset.w, b); });
+
   /* ---------------- program ---------------- */
   let day = 0;
   function renderProgram() {
@@ -447,8 +497,17 @@
     if (!P.length) { tabs.hidden = true; tl.innerHTML = `<div class="empty"><b>${t("pg.soon")}</b></div>`; return; }
     tabs.hidden = P.length < 2;
     tabs.innerHTML = P.map((d, i) => `<button type="button" role="tab" aria-selected="${i === day}" data-d="${i}">${esc(pick(d.label))}</button>`).join("");
-    tl.innerHTML = (P[day].slots || []).map(s => `<div class="slot"><time>${esc(s.time)}</time><div><b>${esc(pick(s.title))}</b>${pick(s.note) ? `<small>${esc(pick(s.note))}</small>` : ""}</div></div>`).join("");
+    tl.innerHTML = (P[day].slots || []).map(s => {
+      const k = ["break", "session", "event"].includes(s.kind) ? ` slot--${s.kind}` : "";
+      const link = s.kind === "session" && s.session != null ? `<a class="slot__link" href="#apply" data-sess="${+s.session}">${t("ap.seeSessions")} →</a>` : "";
+      return `<div class="slot${k}"><time>${esc(s.time)}</time><div><b>${esc(pick(s.title))}</b>${pick(s.note) ? `<small>${esc(pick(s.note))}</small>` : ""}${link}</div></div>`;
+    }).join("");
   }
+  $("#timeline").addEventListener("click", e => {
+    const a = e.target.closest("[data-sess]"); if (!a) return;
+    e.preventDefault(); sess = +a.dataset.sess; renderSessions();
+    $("#apply").scrollIntoView({ behavior: reduced ? "auto" : "smooth" });
+  });
   $("#tabs").addEventListener("click", e => { const b = e.target.closest("button"); if (b) { day = +b.dataset.d; renderProgram(); } });
 
   /* ---------------- join ---------------- */
@@ -460,6 +519,7 @@
     btn.href = open ? "register.html" : ((S.links && S.links.instagram) || "https://www.instagram.com/hisarcs/");
     if (open) { btn.removeAttribute("target"); btn.removeAttribute("rel"); } else { btn.target = "_blank"; btn.rel = "noopener"; }
     $(".join__ig").hidden = !open;
+    renderForms();
   }
 
   /* ---------------- legacy ---------------- */
