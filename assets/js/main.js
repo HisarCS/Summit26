@@ -35,7 +35,7 @@
       "pg.eyebrow": "Daily program", "pg.title": "The <em>timeline</em>",
       "pg.soon": "The program will be announced soon.",
       "join.eyebrow": "Registration", "join.title": "Take the<br>leap",
-      "join.soon": "Registration opens soon. Follow @hisarcs to be the first to know.",
+      "join.soon": "Registration opens soon. Follow @hisarcs to be the first to know.", "join.apply": "Applications are open! Fill in the application form, and follow @hisarcs so you don't miss any news.",
       "join.open": "Registration is open. Pick your workshops and take the leap — seats in each workshop are limited.",
       "join.follow": "Follow @hisarcs", "join.register": "Register",
       "ft.where": "Where to find us", "ft.contact": "Contact", "ft.follow": "Follow",
@@ -70,7 +70,7 @@
       "pg.eyebrow": "Günlük program", "pg.title": "Zaman <em>çizelgesi</em>",
       "pg.soon": "Program yakında açıklanacak.",
       "join.eyebrow": "Kayıt", "join.title": "Sen de<br>sıçra",
-      "join.soon": "Kayıtlar çok yakında açılıyor. Haberin ilk olsun diye @hisarcs'ı takip et.",
+      "join.soon": "Kayıtlar çok yakında açılıyor. Haberin ilk olsun diye @hisarcs'ı takip et.", "join.apply": "Başvurular açık! Başvuru formunu doldur, haberleri kaçırmamak için @hisarcs'ı takip et.",
       "join.open": "Kayıtlar açık! Atölyelerini seç ve sıçra, her atölyenin kontenjanı sınırlı.",
       "join.follow": "@hisarcs'ı takip et", "join.register": "Kayıt ol",
       "ft.where": "Bizi nerede bulabilirsin", "ft.contact": "İletişim", "ft.follow": "Takip et",
@@ -513,7 +513,7 @@
   /* ---------------- join ---------------- */
   function renderJoin() {
     const open = !!(S.registrationOpen && S.registrationEndpoint);
-    $("#joinText").textContent = t(open ? "join.open" : "join.soon");
+    $("#joinText").textContent = t(open ? "join.open" : (S.applyFormUrl ? "join.apply" : "join.soon"));
     $("#joinBtnText").textContent = t(open ? "join.register" : "join.follow");
     const btn = $("#joinBtn");
     btn.href = open ? "register.html" : ((S.links && S.links.instagram) || "https://www.instagram.com/hisarcs/");

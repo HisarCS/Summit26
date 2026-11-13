@@ -1,7 +1,9 @@
 /* Content for the 13th Coding Summit site.
    Workshop names, levels, the 19 Dec flow and the Saturday session grid come from Mehmet Bener's update
    (WhatsApp, 11 Nov 2026): rows marked red in the sheet (FabArt, Generative Design, Julia) are removed.
-   Seven workshops appear only in the session grid, not in the names sheet; their levels came later from
+   13 Nov (Senanur hoca via Mehmet): "Cyber Detectives: OSINT" is now the Metasploit workshop and "Quantum World"
+   is the same workshop as "From Bits to Qubits" — merged; the session grid points at the remaining ids.
+   Seven workshops appeared only in the session grid, not in the names sheet; their levels came later from
    Mehmet (12 Nov; "Ortaokul" = grades 5-6 + 7-8). levels: [] would show "level to be announced".
    Instructor names are left out on purpose.
    Descriptions: `official` ones come from the summit's own texts; the rest are drafts to be replaced as the
@@ -20,14 +22,14 @@ window.SUMMIT = {
   registrationEndpoint: "https://script.google.com/macros/s/AKfycbxKrWLGIs22U5VpLgRlXYqRsiao5HuSTrU_-JAiUEo-iiqvwEKa8dMmhVyl6s-2Euqp7g/exec",
 
   // Google Forms links (Mehmet sends them by ~13 Nov). Empty = the button stays visible and says "link coming soon".
-  applyFormUrl: "",
+  applyFormUrl: "https://forms.gle/wjtXRjw1P2aqwkNh6",
   brownieFormUrl: "",
 
   links: {
     email: "idealab@hisarschool.k12.tr",
     instagram: "https://www.instagram.com/hisarcs/",
     linkedin: "",
-    frc: "https://6431.hisarschool.k12.tr/",
+    frc: "https://hisarcs.github.io/6431-Website/",
     hisarcs: "https://hisarcs.github.io/",
     previous: [
       { label: { en: "Hisar Coding Summit 2022", tr: "Hisar Coding Summit 2022" }, href: "https://hisarcs.github.io/Web/" },
@@ -110,7 +112,7 @@ window.SUMMIT = {
       title: { tr: "Fikirden Prototipe: Ar-Ge ve Hızlı Üretim", en: "From Idea to Prototype: R&D Quickshop" },
       desc: { tr: "Bu atölye, STEM, toplum ve teknoloji arasındaki etkileşimi anlayarak disiplinlerarası problemleri çözmeyi hedefler. Katılımcılar, karmaşık sistemleri analiz ederken hesaplamalı düşünme ve tasarım odaklı araştırma becerilerini geliştirir. Oturum boyunca fikir üretme, problem tanımlama, hipotez kurma ve proje yazımı aşamaları uygulanır. Bu süreç, öğrencilerin düşüncelerini sistematik biçimde formüle edip araştırmaya dönüştürmesini sağlar.",
               en: "This workshop tackles interdisciplinary problems by understanding how STEM, society and technology interact. Participants build computational thinking and design-led research skills while analysing complex systems, and practise idea generation, problem definition, hypothesis building and proposal writing — turning their thinking into structured research." } },
-    { id: "cybersecurity-workshop-router-penetration-testin", cat: "code", pg: "cyber", levels: ["lise"], device: true,
+    { id: "cybersecurity-workshop-router-penetration-testin", cat: "code", pg: "cyber", levels: ["lise", "lise-adv"], device: true,
       title: { tr: "Bir Hacker Gibi Düşün: Metasploit Atölyesi", en: "Think Like a Hacker: Metasploit Workshop" },
       desc: { tr: "Bir hacker gibi düşün: güvenli bir test ortamında sistemlerin zayıf noktalarını Metasploit ile bul ve bu saldırılara karşı nasıl korunacağını öğren.",
               en: "Think like a hacker: use Metasploit to find weak spots in a safe test lab, and learn how to defend against those attacks." } },
@@ -130,7 +132,7 @@ window.SUMMIT = {
       title: { tr: "Bakır Yollarda Kuantum Sıçrama: Kendi Devreni Tasarla!", en: "Quantum Leap on Copper: Design Your Own PCB!" },
       desc: { tr: "Bir devreyi şemadan baskı devre kartına taşı: yerleşim, bakır yollar ve üretim.",
               en: "Take a circuit from schematic to printed circuit board: placement, copper traces and fabrication." } },
-    { id: "quantum-computing", cat: "code", pg: "qubit", levels: ["lise-adv"], device: true,
+    { id: "quantum-computing", cat: "code", pg: "qubit", levels: ["lise", "lise-adv"], device: true,
       title: { tr: "Kuantum Sıçrama: Bitlerden Kübitlere", en: "Quantum Leap: From Bits to Qubits" },
       desc: { tr: "Kübitler, süperpozisyon ve ölçüm: bu yılın temasının arkasındaki bilimi kuantum devreleriyle keşfet.",
               en: "Qubits, superposition and measurement: explore the science behind this year's theme with quantum circuits." } },
@@ -160,10 +162,6 @@ window.SUMMIT = {
               en: "Cutting, colour and sound: turn your footage into a short video that lands." } },
 
     /* In the 19 Dec session grid but not in the names sheet — levels sent separately on 12 Nov. */
-    { id: "quantum-world-think-beyond-bits", cat: "code", pg: "qubit", levels: ["lise", "lise-adv"], device: true,
-      title: { tr: "Kuantum Dünyası: Bitlerin Ötesini Düşün", en: "Quantum World: Think Beyond Bits" },
-      desc: { tr: "Bitlerin ötesine geç: süperpozisyon ve dolanıklık gibi kuantum dünyasının tuhaf kurallarını deneylerle keşfet.",
-              en: "Go beyond bits: explore the strange rules of the quantum world, like superposition and entanglement, through experiments." } },
     { id: "design-your-own-sticker-graphic-design-and-stick", cat: "design", pg: "sticker", levels: ["ilkokul", "5-6", "7-8", "lise"], device: true,
       title: { tr: "Sticker Fabrikası: Kendi Sticker'ını Tasarla!", en: "Sticker Factory: Design Your Own!" },
       desc: { tr: "Grafik tasarımın temelleriyle kendi sticker'ını çiz, kesim hattını hazırla ve bas.",
@@ -176,10 +174,6 @@ window.SUMMIT = {
       title: { tr: "PiWars: İnşa Et, Kodla, Yarış!", en: "PiWars: Build, Code, Compete!" },
       desc: { tr: "Raspberry Pi tabanlı robotlarla PiWars görevlerine hazırlan: tasarım, sensörler ve parkur stratejisi.",
               en: "Get ready for PiWars challenges with Raspberry Pi robots: design, sensors and course strategy." } },
-    { id: "cyber-detectives-osint-investigation", cat: "code", pg: "cyber", levels: ["lise", "lise-adv"], device: true,
-      title: { tr: "Siber Dedektifler: Bir OSINT Soruşturması", en: "Cyber Detectives: An OSINT Investigation" },
-      desc: { tr: "Açık kaynaklardan ipucu topla, izleri birleştir ve bir siber vakayı çöz; bu sırada kendi dijital izini korumayı öğren.",
-              en: "Gather clues from open sources, connect the traces and crack a cyber case — and learn to protect your own digital footprint along the way." } },
     { id: "vinyl-cutting", cat: "fab", pg: "sticker", levels: ["ilkokul", "5-6", "7-8", "lise"], device: true,
       title: { tr: "Cricut ile Kişisel Tasarımlar", en: "Custom Creations with Cricut" },
       desc: { tr: "Vektör çizimini Cricut kesim makinesine hazırla, kes ve yüzeye uygula.",
@@ -218,14 +212,14 @@ window.SUMMIT = {
       ["C 201", "ar-interactive-mechanical-systems-automata"],
       ["C 203", "lemon-building-bio-inspired-robots"],
       ["C 205", "swift-playground-an-image-recognition-app"],
-      ["C 200", "quantum-world-think-beyond-bits"],
+      ["C 200", "quantum-computing"],
       ["C 202", "creative-coding-art-meets-algorithms"],
       ["FabLab: ideaLab Media Lab", "design-your-own-sticker-graphic-design-and-stick"],
       ["FabLab: ideaLab Prototyping Studio", "laser-magic-cut-build-create"],
       ["FabLab: ideaLab Collaboration Studio", "piwars-challenge-robot-design"],
       ["FabLab: ideaLab Fuaye", "frc-robotics-sprint-a-robot-in-4-hours"],
       ["FabLab: ideaLab Project Pod", "brother-embroidery-machine"],
-      ["C 107", "cyber-detectives-osint-investigation"],
+      ["C 107", "cybersecurity-workshop-router-penetration-testin"],
       ["B ideaLab", "2d-game-design-with-godot-monster-invasion"],
       ["C Kütüphane 1", "pcb-design"],
       ["C 111", "video-editing"],
@@ -235,7 +229,7 @@ window.SUMMIT = {
     { time: "12:50 – 14:50", label: { en: "Session 2", tr: "2. Oturum" }, rooms: [
       ["C 201", "ar-interactive-mechanical-systems-automata"],
       ["C 205", "swift-playground-an-image-recognition-app"],
-      ["C 200", "quantum-world-think-beyond-bits"],
+      ["C 200", "quantum-computing"],
       ["C 202", "creative-coding-art-meets-algorithms"],
       ["FabLab: ideaLab Media Lab", "vinyl-cutting"],
       ["FabLab: ideaLab Collaboration Studio", "piwars-challenge-robot-design"],
@@ -257,7 +251,7 @@ window.SUMMIT = {
       ["FabLab: ideaLab Fuaye", "cardboard-robots-with-micro-bit"],
       ["FabGarage", "haas-cnc"],
       ["C 105", "technovation-girls-prototyping-for-impact"],
-      ["C 107", "cyber-detectives-osint-investigation"],
+      ["C 107", "cybersecurity-workshop-router-penetration-testin"],
       ["C 109", "design-your-own-jointed-animal-in-onshape"],
       ["C Kütüphane 1", "pcb-design"],
       ["C Kütüphane 2", "machine-learning-for-kids"],
