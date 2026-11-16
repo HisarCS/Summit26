@@ -208,6 +208,12 @@ button.room:hover { border-color: var(--yellow); }
 .slot__link { display: inline-block; margin-top: 6px; font-size: 13px; font-weight: 700; color: var(--yellow); text-decoration: none; }
 .slot__link:hover { text-decoration: underline; }
 .join__cta .formnote { flex-basis: 100%; text-align: center; }
+@media (max-width: 1024px) {
+  .room { grid-template-columns: 150px 1fr; }
+  .room .tags { grid-column: 2; }
+  .room__no { overflow-wrap: break-word; }
+}
 @media (max-width: 700px) {
   .room { grid-template-columns: 1fr; }
+  .room .tags { grid-column: auto; }
 }
