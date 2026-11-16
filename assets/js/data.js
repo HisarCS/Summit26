@@ -23,7 +23,7 @@ window.SUMMIT = {
 
   // Google Forms links (Mehmet sends them by ~13 Nov). Empty = the button stays visible and says "link coming soon".
   applyFormUrl: "https://forms.gle/wjtXRjw1P2aqwkNh6",
-  brownieFormUrl: "",
+  brownieFormUrl: "https://forms.gle/B8K2nKiRcu2uzpAK8",
 
   links: {
     email: "idealab@hisarschool.k12.tr",
